@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Python基础知识 | myBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python 简介Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。 (1)Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。 (2)Python 是交互式语言： 这意味着，您可以在一个Pyt">
+<meta name="keywords" content="基础知识,菜鸟学习,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/python基础知识/index.html">
+<meta property="og:site_name" content="myBlog">
+<meta property="og:description" content="Python 简介Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。 (1)Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。 (2)Python 是交互式语言： 这意味着，您可以在一个Pyt">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-20T06:30:24.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python基础知识">
+<meta name="twitter:description" content="Python 简介Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。 (1)Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。 (2)Python 是交互式语言： 这意味着，您可以在一个Pyt">
+  
+    <link rel="alternative" href="/atom.xml" title="myBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">tang</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://tangjingj.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">tang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">tang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-python基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/04/python基础知识/" class="article-date">
+      <time datetime="2019-09-04T07:19:52.528Z" itemprop="datePublished">2019-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python基础知识
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/菜鸟学习/">菜鸟学习</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in index | 首页摘要></excerpt></p>
+<h1 id="Python-简介"><a href="#Python-简介" class="headerlink" title="Python 简介"></a>Python 简介</h1><p>Python 是一个高层次的结合了解释性、编译性、互动性和面向对象的脚本语言。<br>Python 的设计具有很强的可读性，相比其他语言经常使用英文关键字，其他语言的一些标点符号，它具有比其他语言更有特色语法结构。</p>
+<pre><code>(1)Python 是一种解释型语言： 这意味着开发过程中没有了编译这个环节。类似于PHP和Perl语言。
+(2)Python 是交互式语言： 这意味着，您可以在一个Python提示符，直接互动执行写你的程序。
+(3)Python 是面向对象语言: 这意味着Python支持面向对象的风格或代码封装在对象的编程技术。
+(3)Python 是初学者的语言：Python 对初级程序员而言，是一种伟大的语言，它支持广泛的应用程序开发，从简单的文字处理到 WWW 浏览器再到游戏。
+</code></pre><a id="more"></a>
+<the rest of contents | 余下全文>
+
+<h4 id="Python-基础语法"><a href="#Python-基础语法" class="headerlink" title="Python 基础语法"></a>Python 基础语法</h4><h6 id="1-交互式编程"><a href="#1-交互式编程" class="headerlink" title="1.交互式编程"></a>1.交互式编程</h6><p>交互式编程不需要创建脚本文件，是通过 Python 解释器的交互模式进来编写代码。</p>
+<h6 id="2-脚本式编程"><a href="#2-脚本式编程" class="headerlink" title="2.脚本式编程"></a>2.脚本式编程</h6><p>通过脚本参数调用解释器开始执行脚本，直到脚本执行完毕。当脚本执行完成后，解释器不再有效。</p>
+<h6 id="3-Python-标识符"><a href="#3-Python-标识符" class="headerlink" title="3.Python 标识符"></a>3.Python 标识符</h6><p>在 Python 里，标识符由字母、数字、下划线组成。<br>在 Python 中，所有标识符可以包括英文、数字以及下划线(_)，但不能以数字开头。<br>Python 中的标识符是区分大小写的。</p>
+<p>以下划线开头的标识符是有特殊意义的。以单下划线开头 _foo 的代表不能直接访问的类属性，需通过类提供的接口进行访问，不能用 from xxx import * 而导入；</p>
+<p>以双下划线开头的 <strong>foo 代表类的私有成员；以双下划线开头和结尾的 </strong>foo__ 代表 Python 里特殊方法专用的标识，如 <strong>init</strong>() 代表类的构造函数。</p>
+<p>Python 可以同一行显示多条语句，方法是用分号 ; 分开</p>
+<h6 id="4-Python-保留字符"><a href="#4-Python-保留字符" class="headerlink" title="4.Python 保留字符"></a>4.Python 保留字符</h6><p>这些保留字不能用作常数或变数，或任何其他标识符名称。所有 Python 的关键字只包含小写字母。</p>
+<h6 id="5-行和缩进"><a href="#5-行和缩进" class="headerlink" title="5.行和缩进"></a>5.行和缩进</h6><p>学习 Python 与其他语言最大的区别就是，Python 的代码块不使用大括号 {} 来控制类，函数以及其他逻辑判断。python 最具特色的就是用缩进来写模块。<br>缩进的空白数量是可变的，但是所有代码块语句必须包含相同的缩进空白数量，这个必须严格执行</p>
+<p>以下代码将会执行错误：</p>
+<pre class="line-numbers language-Java"><code class="language-Java">    #!/usr/bin/python
+    # -*- coding: UTF-8 -*-
+    # 文件名：test.py
+
+    if True:
+        print "Answer"
+        print "True"
+    else:
+        print "Answer"
+        # 没有严格缩进，在执行时会报错
+      print "False"
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="6-多行语句"><a href="#6-多行语句" class="headerlink" title="6.多行语句"></a>6.多行语句</h6><p>Python语句中一般以新行作为语句的结束符。<br>但是我们可以使用斜杠（ \）将一行的语句分为多行显示，如下所示：<br>    total = item_one + \<br>        item_two + \<br>        item_three<br>语句中包含 [], {} 或 () 括号就不需要使用多行连接符。如下实例：<br>    days = [‘Monday’, ‘Tuesday’, ‘Wednesday’,<br>        ‘Thursday’, ‘Friday’]</p>
+<h6 id="7-Python-引号"><a href="#7-Python-引号" class="headerlink" title="7.Python 引号"></a>7.Python 引号</h6><p>Python 可以使用引号( ‘ )、双引号( “ )、三引号( ‘’’ 或 “”” ) 来表示字符串，引号的开始与结束必须的相同类型的。</p>
+<p>其中三引号可以由多行组成，编写多行文本的快捷语法，常用于文档字符串，在文件的特定地点，被当做注释。</p>
+<pre class="line-numbers language-Java"><code class="language-Java">    word = 'word'
+    sentence = "这是一个句子。"
+    paragraph = """这是一个段落。
+    包含了多个语句"""
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h6 id="8-Python注释"><a href="#8-Python注释" class="headerlink" title="8.Python注释"></a>8.Python注释</h6><p>python中单行注释采用 # 开头</p>
+<pre class="line-numbers language-Java"><code class="language-Java">    # 第一个注释
+    print "Hello, Python!";  # 第二个注释
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="9-Python空行"><a href="#9-Python空行" class="headerlink" title="9.Python空行"></a>9.Python空行</h6><p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+<p>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
+<p>记住：空行也是程序代码的一部分。</p>
+<p>同一行显示多条语句<br>Python可以在同一行中使用多条语句，语句之间使用分号(;)分割</p>
+<h6 id="10-Print-输出"><a href="#10-Print-输出" class="headerlink" title="10.Print 输出"></a>10.Print 输出</h6><p>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上逗号 ,</p>
+<p>多个语句构成代码组<br>缩进相同的一组语句构成一个代码块，我们称之代码组。</p>
+<p>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。</p>
+<p>我们将首行及后面的代码组称为一个子句(clause)。</p>
+</the>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/09/04/python基础知识/">Python基础知识</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
+        <p><span>发布时间:</span>2019年09月04日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年05月20日 - 14时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/04/python基础知识/" title="Python基础知识">http://yoursite.com/2019/09/04/python基础知识/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/09/04/python基础知识/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/09/04/Python应用场景/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Python应用场景
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/04/php基础知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP基础知识</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python-简介"><span class="toc-number">1.</span> <span class="toc-text">Python 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python-基础语法"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Python 基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-交互式编程"><span class="toc-number">1.0.0.1.0.1.</span> <span class="toc-text">1.交互式编程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-脚本式编程"><span class="toc-number">1.0.0.1.0.2.</span> <span class="toc-text">2.脚本式编程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Python-标识符"><span class="toc-number">1.0.0.1.0.3.</span> <span class="toc-text">3.Python 标识符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-Python-保留字符"><span class="toc-number">1.0.0.1.0.4.</span> <span class="toc-text">4.Python 保留字符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-行和缩进"><span class="toc-number">1.0.0.1.0.5.</span> <span class="toc-text">5.行和缩进</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-多行语句"><span class="toc-number">1.0.0.1.0.6.</span> <span class="toc-text">6.多行语句</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7-Python-引号"><span class="toc-number">1.0.0.1.0.7.</span> <span class="toc-text">7.Python 引号</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#8-Python注释"><span class="toc-number">1.0.0.1.0.8.</span> <span class="toc-text">8.Python注释</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#9-Python空行"><span class="toc-number">1.0.0.1.0.9.</span> <span class="toc-text">9.Python空行</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#10-Print-输出"><span class="toc-number">1.0.0.1.0.10.</span> <span class="toc-text">10.Print 输出</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'tangjingj',
+      repo: 'tangjingj.github.io',
+      oauth: {
+        client_id: '691f35b7ddfc3e19f192',
+        client_secret: '5804da0ae4bf941e1345c3bf85cd8d2fd9288039',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/09/04/Python应用场景/" title="上一篇: Python应用场景">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/09/04/php基础知识/" title="下一篇: PHP基础知识">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 tang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit">本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

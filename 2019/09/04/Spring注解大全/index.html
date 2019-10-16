@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Spring常用注解 | myBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Spring常用注解1 、将普通类加入容器形成Bean的注解日常主要使用到的定义Bean的注解包括(XML方式配置bean暂不讨论)： @Component、@Repository、@Service、@Controller、@Bean 其中@Component、@Repository、@Service、@Controller实质上属于同一类注解，用法相同，功能相同，区别在于标识组件的类型。当一个">
+<meta name="keywords" content="Spring,注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring常用注解">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/Spring注解大全/index.html">
+<meta property="og:site_name" content="myBlog">
+<meta property="og:description" content="Spring常用注解1 、将普通类加入容器形成Bean的注解日常主要使用到的定义Bean的注解包括(XML方式配置bean暂不讨论)： @Component、@Repository、@Service、@Controller、@Bean 其中@Component、@Repository、@Service、@Controller实质上属于同一类注解，用法相同，功能相同，区别在于标识组件的类型。当一个">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-21T07:28:45.626Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring常用注解">
+<meta name="twitter:description" content="Spring常用注解1 、将普通类加入容器形成Bean的注解日常主要使用到的定义Bean的注解包括(XML方式配置bean暂不讨论)： @Component、@Repository、@Service、@Controller、@Bean 其中@Component、@Repository、@Service、@Controller实质上属于同一类注解，用法相同，功能相同，区别在于标识组件的类型。当一个">
+  
+    <link rel="alternative" href="/atom.xml" title="myBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">tang</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://tangjingj.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">tang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">tang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Spring注解大全" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/04/Spring注解大全/" class="article-date">
+      <time datetime="2019-09-04T07:19:52.542Z" itemprop="datePublished">2019-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring常用注解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Java/">Java</a><a class="article-category-link" href="/categories/Java/Spring/">Spring</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注解/">注解</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in index | 首页摘要></excerpt></p>
+<h1 id="Spring常用注解"><a href="#Spring常用注解" class="headerlink" title="Spring常用注解"></a>Spring常用注解</h1><h5 id="1-、将普通类加入容器形成Bean的注解"><a href="#1-、将普通类加入容器形成Bean的注解" class="headerlink" title="1 、将普通类加入容器形成Bean的注解"></a>1 、将普通类加入容器形成Bean的注解</h5><p>日常主要使用到的定义Bean的注解包括(XML方式配置bean暂不讨论)：</p>
+<pre><code>@Component、@Repository、@Service、@Controller、@Bean
+</code></pre><p>其中@Component、@Repository、@Service、@Controller实质上属于同一类注解，用法相同，功能相同，区别在于标识组件的类型。<br>当一个组件代表数据访问层(Dao)时，你可以给它加上@Repository注解，如下例：<br><a id="more"></a></p>
+<the rest of contents | 余下全文>
+
+<pre><code>  @Repository
+  public class TestDaoImpl implements TestDao {
+
+  public void run(){
+    ....
+   }
+  }
+</code></pre><p>当组件用于业务层时，使用@Service注解，如下例：</p>
+<pre><code>  @Service(value=&quot;TestService&quot;)
+  public class TestServiceImpl implements TestService {
+     @Autowired
+     private TestDao testDao;
+
+     public void run(){
+       ...
+     }
+  }
+</code></pre><p> 注:</p>
+<pre><code> 在此处的@Service注解中额外添加了value=”TestService”的属性，为何对此一举呢？
+ value属性可以指定生成后Bean的名称，这个名称便成为容器中bean 的唯一标识符。
+ 同样的，在@Component、@Repository、@Controller也均可以指定其value值，当然，
+ 是如有必要时加。
+
+ 当组件属于控制层时，则使用@Controller注解；当组件不能进行很好地归类时,那我们可以
+ 使用@Component注解。
+</code></pre><h6 id="Bean注解和-Configuration注解事例"><a href="#Bean注解和-Configuration注解事例" class="headerlink" title="@Bean注解和@Configuration注解事例"></a>@Bean注解和@Configuration注解事例</h6><pre><code>    /**
+     * 配置普通java类 bean方法
+     */
+    @Configuration
+    @Component
+    public class SpringBeansConfig {
+
+        @Bean
+        public SnowFlakeLh snowFlake() {
+            return new SnowFlakeLh();
+        }
+    }
+</code></pre><p>@Configuration实际上，常与@Bean注解一起使用的。如果将一个类标注为@Configuration注解，那么也就意味着这个class将会作为创建各种bean的工厂（类似于一个新的容器）。<br>Bean注解主要用于方法上，有点类似于工厂方法，当使用了@Bean注解，我们可以连续使用多种定义bean时用到的注解，spring注入直接托管给spring管理，类似接口，使用该方法时直接使用@Autowired注入。<br>以上的代码实际上等价于Xml中的配置：</p>
+<pre><code>    &lt;beans&gt;
+     &lt;bean class=&quot;com.acme.services.SnowFlakeLh&quot; id=&quot;snowFlake&quot;&gt;&lt;/bean&gt;
+    &lt;/beans&gt;
+</code></pre><p>注:</p>
+<pre><code>在Spring的@Component注解中使用@Bean与在Spring中的@Configuration使用是一定的差别
+的。在使用@Component的类中不会强制使用CGLIB代理拦截方法和属性。而在@Configuration
+类中，则会使用CGLIB代理去调用@Bean标注的方法并返回对象的引用。在@Configuration注
+解中使用@Bean也可以防止同一个@Bean方法被意外调用多次时而产生细微的难以排查的错误
+</code></pre><h5 id="2-、从容器中取Bean（装配bean）时常用的注解"><a href="#2-、从容器中取Bean（装配bean）时常用的注解" class="headerlink" title="2 、从容器中取Bean（装配bean）时常用的注解"></a>2 、从容器中取Bean（装配bean）时常用的注解</h5><p>最常用到的用于装配的注解是：@Autowired和@Resourc</p>
+<ol>
+<li><p>@Autowired注解</p>
+<pre><code>@Service
+public class UserServiceImpl implements UserService{
+
+   @Autowired
+   private TBUserMapper userMapper;
+}
+</code></pre><p>@Autowired注解可用于为类的属性、构造器、方法进行注值。默认情况下，其依赖的对象必须存在（bean可用），如果需要改变这种默认方式，可以设置其required属性为false。另外一个比较重要的点就是，@Autowired注解默认按照类型装配，如果容器中包含多个同一类型的Bean，那么启动容器时会报找不到指定类型bean的异常，解决办法是结合@Qualified注解进行限定，指定注入的bean名称</p>
+</li>
+<li><p>@Resource注解<br>默认情况下按照bean的名称进行注入，当找不到匹配项时会按照类型装配。当按照名称进行装配时，可以指定其name属性，倘若没有指定，注解标注在哪个字段上，其默认名称就是那个字段的名称。当然，@Resource注解也支持按指定类型进行装配，给它的type属性赋特定类型的值即可（注意，当指定了name属性后，只能按照名称装配）</p>
+<pre><code>public class SpringAnotationDemo {
+
+@Resource(name = &quot;httpApiClient&quot;)
+private HttpApiClient httpApiClient;
+@Resource(type = XQSmsHttpClient.class)
+private SmsHttpClient smsHttpClient;
+}
+</code></pre></li>
+</ol>
+<h5 id="3、spring-MVC模块注解"><a href="#3、spring-MVC模块注解" class="headerlink" title="3、spring MVC模块注解"></a>3、spring MVC模块注解</h5><p>常用到的注解包括：</p>
+<pre><code>@Controller、@RequestMapping、@RequestParam、@PathVariable
+</code></pre><ol>
+<li>@Controller<br>将一个类加上@Controller注解后，表明该类会作为与前端作交互的控制层组件<pre><code> @Controller
+ public class CompanyController {
+ ...
+ }
+</code></pre></li>
+<li><p>@RequestMapping<br>这个注解用于将url映射到整个处理类或者特定的处理请求的方法</p>
+<pre><code> @Controller
+ @RequestMapping(&quot;/company&quot;)
+ public class CompanyController {
+
+  @Autowired
+  private CompanyService companyService;
+ ...
+ }
+</code></pre><p>当标注在class上时，表明此类会接收url为”/company”请求</p>
+</li>
+<li><p>@RequestParam<br>用于绑定request请求参数到指定的方法</p>
+<pre><code> @Controller
+ @RequestMapping(&quot;/company&quot;)
+ public class CompanyController {
+
+  @Autowired
+  private CompanyService companyService;
+
+  @RequestMapping(&quot;/companyList&quot;)
+  public String listCompanies(Map&lt;string, object=&quot;&quot;&gt; map,
+     @RequestParam(value = &quot;data&quot;, required = false) String data,
+     @RequestParam(value = &quot;phone_num&quot;, required = true) String phoneNum) {
+  map.put(&quot;data&quot;, data);
+  map.put(&quot;phoneNum&quot;, phoneNum);
+  return &quot;companyList&quot;;
+  }
+ ...
+ }
+</code></pre><p>上例中，@RequestParam请求参数指定了传入参数的具体字段名（value指定的），以及是否必须传的字段（默认情况下，required=true）。data,phoneNum为形参，即请求参数的使用名，可以更改</p>
+</li>
+<li><p>@PathVariable<br>该注解用于方法修饰方法参数，会将修饰的方法参数变为可供使用的uri变量（可用于动态绑定）</p>
+<pre><code> @Controller
+ @RequestMapping(&quot;/company&quot;)
+ public class CompanyController {
+
+  @Autowired
+  private CompanyService companyService;
+
+  @RequestMapping(&quot;{companyName}&quot;)
+  public String getCompany(Map&lt;string, object=&quot;&quot;&gt; map,
+    @PathVariable String companyName) {
+  Company company = companyService.findByName(companyName);
+  map.put(&quot;company&quot;, company);
+  return &quot;company&quot;;
+  }
+ ...
+ }
+</code></pre><p>当我们请求 “/compony/account”时，componyName会动态地绑定为”account”</p>
+</li>
+</ol>
+<h5 id="4、事务模块注解-Transactional"><a href="#4、事务模块注解-Transactional" class="headerlink" title="4、事务模块注解@Transactional"></a>4、事务模块注解@Transactional</h5><p>在处理dao层或service层的事务操作时，譬如删除失败时的回滚操作，可用到@Transactional注解<br>如:</p>
+<pre><code>    @Service
+    public class CompanyServiceImpl implements CompanyService {
+     @Autowired
+     private CompanyDAO companyDAO;
+
+     @Transactional(propagation = Propagation.REQUIRED, readOnly = false, rollbackFor = Exception.class)
+     public int deleteByName(String name) {
+
+     int result = companyDAO.deleteByName(name);
+     return company;
+     }
+     ...
+    }
+</code></pre><p>上例表明，执行deleteByName方法时，启用了事务处理，事务的各属性含义如下：</p>
+<ol>
+<li>propagation<br>事务的传播行为，spring在TransactionDefinition接口中规定了7种类型的事务传播行为，它们规定了事务方法和事务方法发生嵌套调用时如何进行传播：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">事务传播行为类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">PROPAGATION_REQUIRED</td>
+<td style="text-align:left">如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_SUPPORTS</td>
+<td style="text-align:left">支持当前事务，如果当前没有事务，就以非事务方式执行。</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_MANDATORY</td>
+<td style="text-align:left">使用当前的事务，如果当前没有事务，就抛出异常。</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_REQUIRES_NEW</td>
+<td style="text-align:left">新建事务，如果当前存在事务，把当前事务挂起。</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_NOT_SUPPORTED</td>
+<td style="text-align:left">以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_NEVER</td>
+<td style="text-align:left">以非事务方式执行，如果当前存在事务，则抛出异常</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_NESTED</td>
+<td style="text-align:left">如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则执行与PROPAGATION_REQUIRED类 似的操作</td>
+</tr>
+</tbody>
+</table>
+<pre><code>注：第一种是最常用的，默认的
+</code></pre><ol start="2">
+<li>readOnly<br>事务的读写属性，取true或者false，true为只读、默认为false rollbackFor<br>回滚策略，当遇到指定异常时回滚。<br>譬如上例遇到异常就回滚 timeout （补充的）<br>设置超时时间，单位为秒 isolation<br>设置事务隔离级别，枚举类型，一共五种</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">DEFAULT</td>
+<td style="text-align:left">采用数据库默认隔离级别</td>
+</tr>
+<tr>
+<td style="text-align:left">READ_UNCOMMITTED</td>
+<td style="text-align:left">读未提交的数据（会出现脏读取）</td>
+</tr>
+<tr>
+<td style="text-align:left">READ_COMMITTED</td>
+<td style="text-align:left">读已提交的数据（会出现幻读，即前后两次读的不一样）</td>
+</tr>
+<tr>
+<td style="text-align:left">REPEATABLE_READ</td>
+<td style="text-align:left">可重复读，会出现幻读</td>
+</tr>
+<tr>
+<td style="text-align:left">SERIALIZABLE</td>
+<td style="text-align:left">串行化（对资源消耗较大，一般不使用）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="5、Spring-AOP模块注解"><a href="#5、Spring-AOP模块注解" class="headerlink" title="5、Spring AOP模块注解"></a>5、Spring AOP模块注解</h5><p>spring aop模块的注解主要有@Aspect、@Pointcut、@Before、@Around、@After、<br>@AfterReturning、@AfterThrowing</p>
+<ol>
+<li><p>@Aspect<br>标明该类为切面类，并启用AspectJ注解，注：在使用时要同@Component一起使用，否则不会被扫描到加入容器</p>
+</li>
+<li><p>@Pointcut<br>定义切入点，关于切入点表达式书写方式，请移步官方文档：spring AOP文档</p>
+</li>
+<li><p>@Around<br>定义环绕通知，在目标方法执行前后嵌入相关业务逻辑</p>
+</li>
+<li><p>@Before<br>定义前置通知，在目标方法执行前执行</p>
+</li>
+<li><p>@After<br>定义后置通知，在目标方法执行后执行，不论是目标方法执行正常后退出，还是抛出异常后退出，均会被执行</p>
+</li>
+<li><p>@AfterReturning<br>目标方法执行正常退出后执行 @AfterThrowing<br>目标方法执行抛出异常后执行</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上是Spring常用注解的全部内容,记录下来方便以后查看学习.</p>
+</the>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/09/04/Spring注解大全/">Spring常用注解</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
+        <p><span>发布时间:</span>2019年09月04日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年05月21日 - 15时28分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/04/Spring注解大全/" title="Spring常用注解">http://yoursite.com/2019/09/04/Spring注解大全/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/09/04/Spring注解大全/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/09/04/Vue/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Vue.js框架
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/04/springboot集成lombok/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spring boot集成Lombok</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring常用注解"><span class="toc-number">1.</span> <span class="toc-text">Spring常用注解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-、将普通类加入容器形成Bean的注解"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">1 、将普通类加入容器形成Bean的注解</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Bean注解和-Configuration注解事例"><span class="toc-number">1.0.0.0.1.1.</span> <span class="toc-text">@Bean注解和@Configuration注解事例</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-、从容器中取Bean（装配bean）时常用的注解"><span class="toc-number">1.0.0.0.2.</span> <span class="toc-text">2 、从容器中取Bean（装配bean）时常用的注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、spring-MVC模块注解"><span class="toc-number">1.0.0.0.3.</span> <span class="toc-text">3、spring MVC模块注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4、事务模块注解-Transactional"><span class="toc-number">1.0.0.0.4.</span> <span class="toc-text">4、事务模块注解@Transactional</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5、Spring-AOP模块注解"><span class="toc-number">1.0.0.0.5.</span> <span class="toc-text">5、Spring AOP模块注解</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">1.0.1.</span> <span class="toc-text">总结</span></a></li>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'tangjingj',
+      repo: 'tangjingj.github.io',
+      oauth: {
+        client_id: '691f35b7ddfc3e19f192',
+        client_secret: '5804da0ae4bf941e1345c3bf85cd8d2fd9288039',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/09/04/Vue/" title="上一篇: Vue.js框架">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/09/04/springboot集成lombok/" title="下一篇: spring boot集成Lombok">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 tang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit">本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

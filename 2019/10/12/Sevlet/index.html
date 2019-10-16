@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Sevlet知识 | myBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="servlet具体的运行过程浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过servic">
+<meta name="keywords" content="Sevlet,Java知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sevlet知识">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/Sevlet/index.html">
+<meta property="og:site_name" content="myBlog">
+<meta property="og:description" content="servlet具体的运行过程浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过servic">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-16T09:38:56.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sevlet知识">
+<meta name="twitter:description" content="servlet具体的运行过程浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过servic">
+  
+    <link rel="alternative" href="/atom.xml" title="myBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">tang</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://tangjingj.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">tang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">tang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Sevlet" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/12/Sevlet/" class="article-date">
+      <time datetime="2019-10-12T07:24:54.826Z" itemprop="datePublished">2019-10-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sevlet知识
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java知识/">Java知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sevlet/">Sevlet</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in index | 首页摘要></excerpt></p>
+<h4 id="servlet具体的运行过程"><a href="#servlet具体的运行过程" class="headerlink" title="servlet具体的运行过程"></a>servlet具体的运行过程</h4><p>浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过service()方法,再通过request对象获取数据,写入数据到response对象中(HTTPResponse中响应状态行,响应头,响应正文,状态行设置状态代码,响应头同Httpcontext中的SAXreader解析对应介质类型映射,发送响应正文),发送响应给浏览器,浏览器解析响应数据包,显示页面.<br><a id="more"></a></p>
+<p><the rest of contents | 余下全文></the></p>
+<h4 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h4><p>1.servlet:sun公司制定的一种用来扩展web服务器功能的组件规范<br>web服务器只能处理静态资源的请求,即需要事先将html文档准备好,并存到web服务器上,不能处理动态资源的请求,需要servlet扩展.</p>
+<p>2.组件和容器<br>组件:符合规范,具有部分功能,且需要部署到相应的容器里面才能运行的软件模块,servlet就是一个组件<br>容器:符合规范,为组件提供运行环境的程序.<br>servlet容器为servlet提供了相应的运行环境(即网络相关的服务),Tomcat是一个符合servlet规范的容器</p>
+<p>3.http协议:一种网络应用层协议规定浏览器如何与web服务器之间进行通信及响应的数据包的结构<br>TCP/IP:传输层和网络层协议,将数据包可靠地传递(用socket传递接收数据包会丢包,所以需要一些协议进行进一步解析传递)</p>
+<p>4.浏览器与web服务器之间如何通信?<br>建立连接,发送请求,发送响应,关闭连接,若浏览器要再次发送请求,需要重写建立新的连接,及”一次请求,一次连接”.<br>优点:web服务器可以利用有限的连接为尽可能多的请求服务</p>
+<p>5.数据包的结构<br>请求数据包:<br>a.请求行(请求方式,请求资源路径,协议版本)<br>b.若干消息头(是一个键值对,使用:隔开),浏览器与web服务器,可以通过发送一些消息头来传递一些特定消息,如浏览器可以发送”user-agent”,消息头告诉服务器,浏览器的类型和版本.<br>c.实体内容(消息正文):只有当请求方式为post时,实体内容才会有数据<br>响应数据包:<br>a.状态行(协议版本,状态代码,状态描述),状态码是一个三位数字,描述服务器请求的一个状态.<br>b.响应头,发送一些响应头,如”Content-Type”告诉浏览器,服务器返回的数据类型和编码.<br>c.实体内容,程序的处理结果,浏览器解析出来,生成相应的页面</p>
+<p>6.两种请求方式 ajax技术<br>get请求<br>发get请求情况:在浏览器输入某个地址 点击链接 表单默认的提交方式<br>特点:将请求参数显示在浏览器地址栏,不安全(一些网络设备会记录请求地址)会将请求参数添加到请求行(请求行只能存放2k左右数据),只能提交少量数据<br>post请求<br>发post请求情况:将表单的method属性设置为post<br>特点:不会将请求参数显示在浏览器地址栏,相对安全(http协议对数据包并不会加密处理,所以需要用http的加密),会将请求参数添加到实体内容里面,可以提交大量数据.</p>
+<p>7.重定向<br>服务器通知浏览器向某个地址发送请求(服务器可以通过302状态和location消息头,该消息头的值是一个地址,为重定向地址),浏览器收到后,会立即向重定向地址发送请求.<br>如何重定向:response.sendRedirect(String url) url是重定向地址<br>特点:重定向地址是任意的,重定向之后浏览器地址栏的地址会发生变化</p>
+<h4 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h4><p>sun公司制定的一种服务器端的动态页面技术规范,(因为使用servlet虽然也可以生成动态页面,但由于反射,需要使用大量out.println语句,并且不利于页面的维护,若要修改页面,需要修改servlet代码,所以制定了jsp)<br>jsp是以.jsp为后缀的文件,该文件主要由html和少量的java代码组成,容器会将这个文件自动转成servlet然后执行,本质是一个servlet.</p>
+<p>1.写jsp的步骤<br>(1)写.jsp为后缀的文件<br>(2)在这个文件中,可以使用如下元素:<br>html(css,js)直接写即可,java代码片段&lt;%java代码%&gt;,jsp表达式&lt;%=java表达式%&gt;<br>隐含对象:可以直接使用的对象,如out,request,response,application,session,exception,pageContext,page(jsp实例本身),config<br>因容器在生成对应的servlet源代码时,会自动添加获得这些对象的代码.<br>指令:告诉容器将jsp转成一个servlet时,额外做一些从处理,如导包<br>语法:&lt;%@指令名 属性=值%&gt;<br>page指令:import属性用于指定要导入的包名<br>&lt;%@page import=”java.util.<em> , java.text.</em> “%&gt;<br>a.contentType属性:用于设置response.setContentType方法的内容<br>b.pageEncoding属性:用来告诉容器在读取jsp文件的内容时使用指定字符集来解码<br>c.session属性:缺省值是true,若值是false,则容器不再添加获得session对象的代码,即   不能使用session隐含对象.<br>d.errorPage属性:用来指定一个异常处理页面,当jsp运行发送异常,则容器会调用异常页   面处理<br>f.isErrorPage属性:缺省值是false,若值是true,就可以使用exception隐含对象         (exception对象用于获得异常的一个简短的描述)</p>
+<p>2.include指令<br>file属性:用于指定被包含的文件名.(容器会将file属性指定的文件的内容插入到该指令所在的位置,被包含的jsp并不会真正执行,没有对应的servlet)</p>
+<p>3.jsp执行过程<br>(1)容器将jsp转换成一个servlet(html–&gt;service方法里面使用out.weite输出)<br>注:out.println将null直接输出,out.write方法会将null转换成””输出</p>
+<pre><code>&lt;% %&gt; --&gt; service方法里,照搬
+&lt;%= %&gt; --&gt; service方法中,使用out.print方法输出
+&lt;%! %&gt; --&gt; 给servlet增加了新的属性或方法  
+</code></pre><p>(2)容器再调用该servlet,容器会将该servlet先编译,然后实例化,初始化,调用,销毁.</p>
+<h4 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h4><p>一个web组件将未完成的处理交给另外一个web组件继续做.<br>web组件是servlet和jsp的总称,通常是一个servlet获得数据之后转交给另外一个jsp来展现.</p>
+<p>1.转发过程<br>(1)将数据绑定到request对象上</p>
+<pre><code>request.setAttribute(String name,Object obj);   name:绑定名  obj:绑定值
+`
+</code></pre><p>(2)获得转发器<br>RequestDispatcher rd = request.getRequestDistinct(String url);<br>RequestDispatch是一个接口,该方法会返回一个符合该接口要求的对象,该对象为转发器<br>转发的本质是一个web组件通知转发器会调用另外一个web组件,可以将转发器看做一个媒介,通过媒介可以通知容器去调另一个web组件.<br>url是转发的目的地,通常是一个jsp<br>(3)转发<br>rd.forward(request,response);</p>
+<p>依据绑定名获得绑定值,若绑定值不在,返回null<br>request.getAttribute(String name);</p>
+<p>2.特点<br>转发之后,浏览器的地址栏的地址是不变的;<br>转发的目的地有限制,要求属于同一个web应用.</p>
+<p>3.比较转发和重定向<br>(1)转发可以共享request,重定向不行(容器收到请求之后,会立即创建request和response对象,一旦响应发送完毕,会立即销毁这两个对象,也就是说request和response对象的生成时间是一次请求和响应期间存在;转发是一次请求,重定向是二次请求)<br>(2)转发的浏览器地址栏的地址没有变化,重定向有变化<br>(3)转发的目的地有限制(要求同一个应用),重定向没有任何限制</p>
+<h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><p>1.状态管理<br>将浏览器与web服务器之间多次交互当做一个整体来处理,并且将多次交互所涉及的数据(即状态)保存下来.</p>
+<p>2.如何进行状态管理<br>(1)将状态保存在浏览器端(cookie)<br>(2)将状态保存在服务器端(session会话)</p>
+<p>2.cookie<br>cookie:服务器临时存放在浏览器端的少量数据,用于跟踪用户状态.<br>cookie工作原理:当浏览器访问服务器时,服务器将少量数据以set-cookie消息头的形式发给浏览器,浏览器会保存下来;当浏览器再次访问服务器时,会将之前保存的这些数据以cookie消息头的形式发送给服务器.</p>
+<p>3.如何添加cookie<br>Cookie c = new Cookie(String name,String value);<br>response.addCookie(c);<br>name–cookie的名称 value–cookie的值</p>
+<p>4.如何读取cookie<br>Cookie[] request.getCookies();<br>该方法有可能返回null<br>String cookie.getName();<br>String cookie.getValue();</p>
+<p>5.生存时间问题<br>(1)默认情况下,浏览器会将cookie保存在内存里面,浏览器如果关闭,则cookie会被删除.<br>(2)可以调用setMaxAge方法来设置cookie的生存时间.<br>  cookie.setMaxAge(int seconds); 单位是秒<br>  seconds &gt; 0:浏览器会将cookie保存在硬盘上(一般是文件的形式),超过指定的时                  间,cookie会被删除.<br>  seconds &lt; 0:默认情况(即保存到内存里面)<br>  seconds = 0:删除cookie<br>  如,要删除一个名称为username的cookie<br>  Cookie c = new Cookie(“username”,””);<br>  c.setMaxAge(0);<br>  response.addCookie(c);//同名的cookie会被覆盖达到修改的目的</p>
+<h4 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h4><p>生命周期:Servlet容器如何创建servlet实例,如何对其进行初始化操作,如何调用其方法来处理请求,以及如何销毁其实例的整个过程,也可以说即容器时如何管理servlet.</p>
+<p>生命周期分成哪几个阶段<br>1.实例化:容器调用servlet的构造器,创建servlet实例<br>  实例化时间:默认情况下,容器只有收到请求后,才会创建servlet实例(容器只会创建一个servlet实例)<br>  在添加适当配置后,可以让容器启动后,立即创建servlet.</p>
+<pre class="line-numbers language-java"><code class="language-java">  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置启动加载   参数值是一个大于等于零的整数<span class="token punctuation">,</span>值越小越优先被创建<span class="token operator">--</span><span class="token operator">></span>
+  <span class="token operator">&lt;</span>load<span class="token operator">-</span>on<span class="token operator">-</span>startup<span class="token operator">></span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>load<span class="token operator">-</span>on<span class="token operator">-</span>startup<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>2.初始化<br>容器在创建好servlet实例后,会调用该实例的init(ServletConfig)方法.<br>(该方法只会执行1次)<br>GenricServlet已经提供了init(ServletConfig config)方法的实现.<br>该方法实现:将容器传递过来的ServletConfig对象保存下来,且提供了getServletConfig方法来获得该对象,另外,该方法还调用了一个init()方法,作为开发人员,若要扩展,只需要重写override init()方法即可.</p>
+<p>ServletConfig提供了一些实用方法,如读取初始化参数的方法.</p>
+<pre class="line-numbers language-Java"><code class="language-Java">      <!--配置初始化参数  -->
+      <init-param>
+          <param-name>company</param-name>
+          <param-value>码多多</param-value>
+      </init-param>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3.就绪(调用)<br>容器在收到请求之后,会调用servlet实例的service方法处理请求.<br>HttpServlet已经提供了service方法的实现.<br>该方法实现:依据请求类型调用对应的doXXX方法,如get请求调用doGet方法,post请求调用doPost方法.doXXX方法只是简单的抛出一个异常.<br>在开发servlet时,有两个选择,一是直接重写Httpservlet的service方法,或者重写HttpServlet的doGet和doPost方法.</p>
+<p>4.销毁<br>容器在删除servlet实例之前,会调用该实例的destory方法.(该方法只会执行一次)<br>该方法的实现为空(什么都没有做),开发人员可以override的destory方法来扩展.</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/10/12/Sevlet/">Sevlet知识</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
+        <p><span>发布时间:</span>2019年10月12日 - 15时24分</p>
+        <p><span>最后更新:</span>2019年10月16日 - 17时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/10/12/Sevlet/" title="Sevlet知识">http://yoursite.com/2019/10/12/Sevlet/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/10/12/Sevlet/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/12/Hadoop知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hadoop</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet具体的运行过程"><span class="toc-number">1.</span> <span class="toc-text">servlet具体的运行过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet"><span class="toc-number">2.</span> <span class="toc-text">servlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP"><span class="toc-number">3.</span> <span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转发"><span class="toc-number">4.</span> <span class="toc-text">转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-number">5.</span> <span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet的生命周期"><span class="toc-number">6.</span> <span class="toc-text">servlet的生命周期</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'tangjingj',
+      repo: 'tangjingj.github.io',
+      oauth: {
+        client_id: '691f35b7ddfc3e19f192',
+        client_secret: '5804da0ae4bf941e1345c3bf85cd8d2fd9288039',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/10/12/Hadoop知识/" title="下一篇: Hadoop">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 tang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit">本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Vue.js框架 | myBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Vue.js框架Vue.js（读音 /vjuː/, 类似于 view） 是一套构建用户界面的渐进式框架。Vue 只关注视图层， 采用自底向上增量开发的设计。Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。">
+<meta name="keywords" content="前端知识,Vue.js,框架,HTML,JS,CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js框架">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/Vue/index.html">
+<meta property="og:site_name" content="myBlog">
+<meta property="og:description" content="Vue.js框架Vue.js（读音 /vjuː/, 类似于 view） 是一套构建用户界面的渐进式框架。Vue 只关注视图层， 采用自底向上增量开发的设计。Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/EL9XP1.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELFqOK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELPchn.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELiF3t.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELFXwD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkSfA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELiuNj.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELi081.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELZ42j.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELZ7q0.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkA0S.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELi6bD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELifPA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELZXiF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELZxz9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkETg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELe9qx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkM60.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELk1mT.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkwX6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkyAe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELk29A.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkWct.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELkIHS.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELAZDK.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELA1gI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/Eqaz8A.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELeEJe.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELensI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/Eqd3aF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELelo8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELeGWQ.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELeULq.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELecl9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELe5FO.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELmiXn.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELmetU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELn0GF.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELutQH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELu0TP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELuWmn.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELub6J.png">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2017/01/F6855065-AA5E-4BD7-B1F6-2350D4B4B1BB.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELuOmR.png">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2017/01/F60DA836-0E62-4C78-AEE0-2CFD6A2AE498.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELujTx.png">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2017/01/D9FC72B9-35C1-4189-830F-87FD0A6734F8-1.jpg">
+<meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2017/01/components.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELKyAx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/EqweoD.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/Eqw1yt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELK4ud.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELKTEt.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELFGRI.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/17/ELFuqO.png">
+<meta property="og:updated_time" content="2019-05-20T06:26:12.887Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue.js框架">
+<meta name="twitter:description" content="Vue.js框架Vue.js（读音 /vjuː/, 类似于 view） 是一套构建用户界面的渐进式框架。Vue 只关注视图层， 采用自底向上增量开发的设计。Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/17/EL9XP1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="myBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">tang</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://tangjingj.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">tang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">tang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Vue" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/04/Vue/" class="article-date">
+      <time datetime="2019-09-04T07:19:52.545Z" itemprop="datePublished">2019-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue.js框架
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-js/">Vue.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端知识/">前端知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/框架/">框架</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <excerpt in index | 首页摘要>
+
+<h1 id="Vue-js框架"><a href="#Vue-js框架" class="headerlink" title="Vue.js框架"></a>Vue.js框架</h1><p>Vue.js（读音 /vjuː/, 类似于 view） 是一套构建用户界面的渐进式框架。<br>Vue 只关注视图层， 采用自底向上增量开发的设计。<br>Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。<br><a id="more"></a></p>
+<the rest of contents | 余下全文>
+
+<h3 id="Vue-js-安装"><a href="#Vue-js-安装" class="headerlink" title="Vue.js 安装"></a>Vue.js 安装</h3><p>1、独立版本<br>我们可以在 Vue.js 的官网上直接下载 vue.min.js 并用 script 标签引入。</p>
+<p><a href="https://vuejs.org/js/vue.min.js" target="_blank" rel="noopener">下载vue.js</a></p>
+<p>2、使用 CDN 方法<br>以下推荐国外比较稳定的两个 CDN，国内还没发现哪一家比较好，目前还是建议下载到本地。<br>Staticfile CDN(国内): <a href="https://cdn.staticfile.org/vue/2.2.2/vue.min.js" target="_blank" rel="noopener">https://cdn.staticfile.org/vue/2.2.2/vue.min.js</a><br>unpkg：<a href="https://unpkg.com/vue/dist/vue.js" target="_blank" rel="noopener">https://unpkg.com/vue/dist/vue.js</a>, 会保持和 npm 发布的最新的版本一致。<br>cdnjs: <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js" target="_blank" rel="noopener">https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js</a></p>
+<p>3、NPM 方法<br>由于 npm 安装速度慢，本教程使用了淘宝的镜像及其命令 cnpm，安装使用介绍参照：<br>使用淘宝 NPM 镜像。<br>npm 版本需要大于 3.0，如果低于此版本需要升级它。</p>
+<h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> -v
+2.3.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="升级-npm"><a href="#升级-npm" class="headerlink" title="升级 npm"></a>升级 npm</h5><pre class="line-numbers language-bash"><code class="language-bash">cnpm <span class="token function">install</span> <span class="token function">npm</span> -g
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="升级或安装-cnpm"><a href="#升级或安装-cnpm" class="headerlink" title="升级或安装 cnpm"></a>升级或安装 cnpm</h5><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> cnpm -g
+在用 Vue.js 构建大型应用时推荐使用 NPM 安装
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h5 id="最新稳定版"><a href="#最新稳定版" class="headerlink" title="最新稳定版"></a>最新稳定版</h5><pre class="line-numbers language-bash"><code class="language-bash">$ cnpm <span class="token function">install</span> vue
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>命令行工具<br>Vue.js 提供一个官方命令行工具，可用于快速搭建大型单页应用。</p>
+<h5 id="全局安装-vue-cli"><a href="#全局安装-vue-cli" class="headerlink" title="全局安装 vue-cli"></a>全局安装 vue-cli</h5><pre class="line-numbers language-bash"><code class="language-bash">$ cnpm <span class="token function">install</span> --global vue-cli
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="创建一个基于-webpack-模板的新项目"><a href="#创建一个基于-webpack-模板的新项目" class="headerlink" title="创建一个基于 webpack 模板的新项目"></a>创建一个基于 webpack 模板的新项目</h5><pre class="line-numbers language-bash"><code class="language-bash">$ vue init webpack my-project
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="这里需要进行一些配置，默认回车即可"><a href="#这里需要进行一些配置，默认回车即可" class="headerlink" title="这里需要进行一些配置，默认回车即可"></a>这里需要进行一些配置，默认回车即可</h5><pre class="line-numbers language-bash"><code class="language-bash">    进入项目，安装并运行：
+    $ <span class="token function">cd</span> my-project
+    $ cnpm <span class="token function">install</span>
+    $ cnpm run dev
+     DONE  Compiled successfully <span class="token keyword">in</span> 4388ms
+    <span class="token operator">></span> Listening at http://localhost:8080
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">目录/文件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">build</td>
+<td style="text-align:left">项目构建(webpack)相关代码</td>
+</tr>
+<tr>
+<td style="text-align:left">config</td>
+<td style="text-align:left">配置目录，包括端口号等。我们初学可以使用默认的</td>
+</tr>
+<tr>
+<td style="text-align:left">node_modules</td>
+<td style="text-align:left">npm 加载的项目依赖模块</td>
+</tr>
+<tr>
+<td style="text-align:left">src</td>
+<td style="text-align:left">这里是我们要开发的目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：assets: 放置一些图片，如logo等; components: 目录里面放了一个组件文件，可以不用; App.vue: 项目入口文件，我们也可以直接将组件写这里，而不使用 components 目录; main.js: 项目的核心文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">test</td>
+<td style="text-align:left">静态资源目录，如图片、字体等。</td>
+</tr>
+<tr>
+<td style="text-align:left">.xxxx文件</td>
+<td style="text-align:left">这些是一些配置文件，包括语法配置，git配置等。</td>
+</tr>
+<tr>
+<td style="text-align:left">index.html</td>
+<td style="text-align:left">首页入口文件，你可以添加一些 meta 信息或统计代码啥的。</td>
+</tr>
+<tr>
+<td style="text-align:left">package.json</td>
+<td style="text-align:left">项目配置文件。</td>
+</tr>
+<tr>
+<td style="text-align:left">README.md</td>
+<td style="text-align:left">项目的说明文档，markdown 格式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Vue-js起步"><a href="#Vue-js起步" class="headerlink" title="Vue.js起步"></a>Vue.js起步</h3><p>每个 Vue 应用都需要通过实例化 Vue 来实现。<br>语法格式如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">  var vm <span class="token operator">=</span> new Vue<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    // 选项
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://s2.ax1x.com/2019/05/17/EL9XP1.png" alt="EL9XP1.png"></p>
+<p>在 Vue 构造器中有一个el 参数，它是 DOM 元素中的 id。在上面实例中 id 为 vue_det，<br>在 div 元素中：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>div <span class="token function">id</span> <span class="token operator">=</span> <span class="token string">"vue_det"</span><span class="token operator">></span><span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这意味着我们接下来的改动全部在以上指定的 div 内，div 外部不受影响。</p>
+<p>接下来我们看看如何定义数据对象。<br>data 用于定义属性，实例中有三个属性分别为：site、url、alexa。<br>methods 用于定义的函数，可以通过 return 来返回函数值。</p>
+<p>双大括号用于输出对象属性和函数返回值。<br>如:<br><img src="https://s2.ax1x.com/2019/05/17/ELFqOK.png" alt="ELFqOK.png"></p>
+<p>当一个 Vue 实例被创建时，它向 Vue 的响应式系统中加入了其 data 对象中能找到的所有的属性。<br>当这些属性的值发生改变时，html 视图将也会产生相应的变化。<br><img src="https://s2.ax1x.com/2019/05/17/ELPchn.png" alt="ELPchn.png"></p>
+<p>除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的<br>属性区分开来。<br>例如：<br><img src="https://s2.ax1x.com/2019/05/17/ELiF3t.png" alt="ELiF3t.png"></p>
+<h4 id="Vue语法"><a href="#Vue语法" class="headerlink" title="Vue语法"></a>Vue语法</h4><p>Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。<br>Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统。<br>结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到<br>DOM 操作上.</p>
+<h5 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h5><h6 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h6><p>数据绑定最常见的形式就是使用(双大括号)的文本插值：</p>
+<p>文本插值<br><img src="https://s2.ax1x.com/2019/05/17/ELFXwD.png" alt="ELFXwD.png"></p>
+<h6 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h6><p>使用 v-html 指令用于输出 html 代码：<br>v-html 指令<br><img src="https://s2.ax1x.com/2019/05/17/ELkSfA.png" alt="ELkSfA.png"></p>
+<h6 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h6><p>HTML 属性中的值应使用 v-bind 指令。<br>以下实例判断 class1 的值，如果为 true 使用 class1 类的样式，否则不使用该类：<br><img src="https://s2.ax1x.com/2019/05/17/ELiuNj.png" alt="ELiuNj.png"></p>
+<h6 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h6><p>Vue.js 都提供了完全的 JavaScript 表达式支持。<br><img src="https://s2.ax1x.com/2019/05/17/ELi081.png" alt="ELi081.png"></p>
+<h6 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h6><p>指令是带有 v- 前缀的特殊属性。<br>指令用于在表达式的值改变时，将某些行为应用到 DOM 上。如下例子：<br><img src="https://s2.ax1x.com/2019/05/17/ELZ42j.png" alt="ELZ42j.png"><br>这里， v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素。</p>
+<h6 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h6><p>参数在指令后以冒号指明。例如， v-bind 指令被用来响应地更新 HTML 属性：<br><img src="https://s2.ax1x.com/2019/05/17/ELZ7q0.png" alt="ELZ7q0.png"><br>在这里 href 是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定。<br>另一个例子是 v-on 指令，它用于监听 DOM 事件：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a v-on:click<span class="token operator">=</span><span class="token string">"doSomething"</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这里参数是监听的事件名。</p>
+<h6 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h6><p>修饰符是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，<br>.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>form v-on:submit.prevent<span class="token operator">=</span><span class="token string">"onSubmit"</span><span class="token operator">></span><span class="token operator">&lt;</span>/form<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h6 id="用户输入"><a href="#用户输入" class="headerlink" title="用户输入"></a>用户输入</h6><p>在 input 输入框中我们可以使用 v-model 指令来实现双向数据绑定：<br><img src="https://s2.ax1x.com/2019/05/17/ELkA0S.png" alt="ELkA0S.png"></p>
+<p>v-model 指令用来在 input、select、text、checkbox、radio 等表单控件元素上创建双向<br>数据绑定，根据表单上的值，自动更新绑定的元素的值。<br>按钮的事件我们可以使用 v-on 监听事件，并对用户的输入进行响应。<br>以下实例在用户点击按钮后对字符串进行反转操作：<br><img src="https://s2.ax1x.com/2019/05/17/ELi6bD.png" alt="ELi6bD.png"></p>
+<h6 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h6><p>Vue.js 允许你自定义过滤器，被用作一些常见的文本格式化。由”管道符”指示, 格式如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 在两个大括号中 --<span class="token operator">></span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> capitalize <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在 v-bind 指令中</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>div v-bind:id<span class="token operator">=</span><span class="token string">"rawId | formatId"</span><span class="token operator">></span><span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>过滤器函数接受表达式的值作为第一个参数。<br>以下实例对输入的字符串第一个字母转为大写：<br><img src="https://s2.ax1x.com/2019/05/17/ELifPA.png" alt="ELifPA.png"></p>
+<p>过滤器可以串联：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> filterA <span class="token operator">|</span> filterB <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>过滤器是 JavaScript 函数，因此可以接受参数：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">{</span><span class="token punctuation">{</span> message <span class="token operator">|</span> filterA<span class="token punctuation">(</span><span class="token string">'arg1'</span>, arg2<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里，message 是第一个参数，字符串 ‘arg1’ 将传给过滤器作为第二个参数， arg2 表达式的值<br>将被求值然后传给过滤器作为第三个参数。</p>
+<h6 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h6><p>v-bind 缩写<br>Vue.js 为两个最为常用的指令提供了特别的缩写：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 完整语法 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a v-bind:href<span class="token operator">=</span><span class="token string">"url"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 缩写 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a :href<span class="token operator">=</span><span class="token string">"url"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+v-on 缩写
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 完整语法 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a v-on:click<span class="token operator">=</span><span class="token string">"doSomething"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 缩写 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a @click<span class="token operator">=</span><span class="token string">"doSomething"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Vue-js-条件与循环"><a href="#Vue-js-条件与循环" class="headerlink" title="Vue.js 条件与循环"></a>Vue.js 条件与循环</h4><p>v-if<br>条件判断使用 v-if 指令：<br>在元素 和 template 中使用 v-if 指令：<br><img src="https://s2.ax1x.com/2019/05/17/ELZXiF.png" alt="ELZXiF.png"></p>
+<p>这里， v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素。<br>在字符串模板中，如 Handlebars ，我们得像这样写一个条件块：<br><img src="https://s2.ax1x.com/2019/05/17/ELZxz9.png" alt="ELZxz9.png"></p>
+<p>v-else<br>可以用 v-else 指令给 v-if 添加一个 “else” 块：<br>随机生成一个数字，判断是否大于0.5，然后输出对应信息：<br><img src="https://s2.ax1x.com/2019/05/17/ELkETg.png" alt="ELkETg.png"></p>
+<p>v-else-if<br>v-else-if 在 2.1.0 新增，顾名思义，用作 v-if 的 else-if 块。可以链式的多次使用：<br><img src="https://s2.ax1x.com/2019/05/17/ELe9qx.png" alt="ELe9qx.png"><br>v-else 、v-else-if 必须跟在 v-if 或者 v-else-if之后。</p>
+<p>v-show<br>我们也可以使用 v-show 指令来根据条件展示元素</p>
+<p>v-show 指令</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>h1 v-show<span class="token operator">=</span><span class="token string">"ok"</span><span class="token operator">></span>Hello<span class="token operator">!</span><span class="token operator">&lt;</span>/h1<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h4><p>循环使用 v-for 指令。<br>v-for 指令需要以 site in sites 形式的特殊语法， sites 是源数据数组并且<br>site 是数组元素迭代的别名。</p>
+<p>v-for 可以绑定数据到数组来渲染一个列表：<br><img src="https://s2.ax1x.com/2019/05/17/ELkM60.png" alt="ELkM60.png"></p>
+<p>模板中使用 v-for：<br><img src="https://s2.ax1x.com/2019/05/17/ELk1mT.png" alt="ELk1mT.png"></p>
+<p>你也可以提供第二个的参数为键名：<br><img src="https://s2.ax1x.com/2019/05/17/ELkwX6.png" alt="ELkwX6.png"></p>
+<p>第三个参数为索引：<br><a href="https://imgchr.com/i/ELkyAe" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/17/ELkyAe.png" alt="ELkyAe.png"></a></p>
+<p>v-for 迭代整数<br>v-for 也可以循环整数<br><img src="https://s2.ax1x.com/2019/05/17/ELk29A.png" alt="ELk29A.png"></p>
+<h4 id="Vue-js-计算属性"><a href="#Vue-js-计算属性" class="headerlink" title="Vue.js 计算属性"></a>Vue.js 计算属性</h4><p>计算属性关键词: computed<br>反转字符串的例子：<br><img src="https://s2.ax1x.com/2019/05/17/ELkWct.png" alt="ELkWct.png"></p>
+<h6 id="computed-vs-methods"><a href="#computed-vs-methods" class="headerlink" title="computed vs methods"></a>computed vs methods</h6><p>我们可以使用 methods 来替代 computed，效果上两个都是一样的，但是 computed 是基于它<br>的依赖缓存，只有相关依赖发生改变时才会重新取值。而使用 methods ，在重新渲染的时候，<br>函数总会重新调用执行。<br><img src="https://s2.ax1x.com/2019/05/17/ELkIHS.png" alt="ELkIHS.png"></p>
+<p>使用 computed 性能会更好，但是如果你不希望缓存，你可以使用 methods 属性</p>
+<h6 id="computed-setter"><a href="#computed-setter" class="headerlink" title="computed setter"></a>computed setter</h6><p>computed 属性默认只有 getter ，不过在需要时你也可以提供一个 setter ：<br><img src="https://s2.ax1x.com/2019/05/17/ELAZDK.png" alt="ELAZDK.png"></p>
+<p>从实例运行结果看在运行 vm.site = ‘前端框架 <a href="http://www.tangdev.top&#39;" target="_blank" rel="noopener">http://www.tangdev.top&#39;</a>; 时，<br>setter 会被调用，vm.name 和 vm.url 也会被对应更新</p>
+<h4 id="Vue-js-监听属性"><a href="#Vue-js-监听属性" class="headerlink" title="Vue.js 监听属性"></a>Vue.js 监听属性</h4><p>Vue.js 监听属性 watch，我们可以通过 watch 来响应数据的变化</p>
+<p>以下实例通过使用 watch 实现计数器：<br><img src="https://s2.ax1x.com/2019/05/17/ELA1gI.png" alt="ELA1gI.png"></p>
+<p>实现效果:<br><img src="https://s2.ax1x.com/2019/05/17/Eqaz8A.png" alt="Eqaz8A.png"></p>
+<p>购物车案例:<br><img src="https://s2.ax1x.com/2019/05/17/ELeEJe.png" alt="ELeEJe.png"><br><img src="https://s2.ax1x.com/2019/05/17/ELensI.png" alt="ELensI.png"></p>
+<p>实现效果:<br><img src="https://s2.ax1x.com/2019/05/17/Eqd3aF.png" alt="Eqd3aF.png"></p>
+<h3 id="Vue-js-样式绑定"><a href="#Vue-js-样式绑定" class="headerlink" title="Vue.js 样式绑定"></a>Vue.js 样式绑定</h3><h4 id="Vue-js-class"><a href="#Vue-js-class" class="headerlink" title="Vue.js class"></a>Vue.js class</h4><p>class与style是 TML元素的属性，用于设置元素的样式，我们可以用v-bind来设置样式属性。vue.js<br>v-bind在处理class和style时,专门增强了它。表达式的结果类型除了字符串之外，还可以是对象或数组。</p>
+<h4 id="class属性绑定"><a href="#class属性绑定" class="headerlink" title="class属性绑定"></a>class属性绑定</h4><p>v-bind:class设置一个对象，从而动态的切换 class:<br><img src="https://s2.ax1x.com/2019/05/17/ELelo8.png" alt="ELelo8.png"></p>
+<p>可以在对象中传入更多属性用来动态切换多个 class</p>
+<pre class="line-numbers language-bash"><code class="language-bash">text-danger 类背景颜色覆盖了 active 类的背景色：
+<span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"static"</span>
+     v-bind:class<span class="token operator">=</span><span class="token string">"{ active: isActive, 'text-danger': hasError }"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>也可以直接绑定数据里的一个对象：<br><img src="https://s2.ax1x.com/2019/05/17/ELeGWQ.png" alt="ELeGWQ.png"></p>
+<p>也可以在这里绑定返回对象的计算属性。这是一个常用且强大的模式：<br><img src="https://s2.ax1x.com/2019/05/17/ELeULq.png" alt="ELeULq.png"></p>
+<h4 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h4><p>把一个数组传给 v-bind:class ，实例如下：<br><img src="https://s2.ax1x.com/2019/05/17/ELecl9.png" alt="ELecl9.png"></p>
+<p>使用三元表达式来切换列表中的 class ：<br><a href="https://imgchr.com/i/ELe5FO" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/17/ELe5FO.png" alt="ELe5FO.png"></a></p>
+<h4 id="Vue-js-style-内联样式"><a href="#Vue-js-style-内联样式" class="headerlink" title="Vue.js style(内联样式)"></a>Vue.js style(内联样式)</h4><p>在 v-bind:style 直接设置样式：<br><img src="https://s2.ax1x.com/2019/05/17/ELmiXn.png" alt="ELmiXn.png"></p>
+<p>v-bind:style 可以使用数组将多个样式对象应用到一个元素上：<br><img src="https://s2.ax1x.com/2019/05/17/ELmetU.png" alt="ELmetU.png"></p>
+<p>注意：当 v-bind:style 使用需要特定前缀的 CSS 属性时，如 transform ，Vue.js 会自动侦测<br>并添加相应的前缀。</p>
+<h3 id="Vue-js-事件处理器"><a href="#Vue-js-事件处理器" class="headerlink" title="Vue.js 事件处理器"></a>Vue.js 事件处理器</h3><p>事件监听可以使用 v-on 指令：<br><img src="https://s2.ax1x.com/2019/05/17/ELn0GF.png" alt="ELn0GF.png"></p>
+<p>v-on 可以接收一个定义的方法来调用<br><img src="https://s2.ax1x.com/2019/05/17/ELutQH.png" alt="ELutQH.png"></p>
+<p>直接绑定到一个方法，也可以用内联 JavaScript 语句：<br><img src="https://s2.ax1x.com/2019/05/17/ELu0TP.png" alt="ELu0TP.png"></p>
+<h4 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h4><p>Vue.js 为 v-on 提供了事件修饰符来处理 DOM 事件细节，如：event.preventDefault() 或 event.stopPropagation()。<br>Vue.js通过由点(.)表示的指令后缀来调用修饰符。</p>
+<pre><code>.stop
+.prevent
+.capture
+.self
+.once
+</code></pre><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 阻止单击事件冒泡 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a v-on:click.stop<span class="token operator">=</span><span class="token string">"doThis"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 提交事件不再重载页面 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>form v-on:submit.prevent<span class="token operator">=</span><span class="token string">"onSubmit"</span><span class="token operator">></span><span class="token operator">&lt;</span>/form<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 修饰符可以串联  --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a v-on:click.stop.prevent<span class="token operator">=</span><span class="token string">"doThat"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 只有修饰符 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>form v-on:submit.prevent<span class="token operator">></span><span class="token operator">&lt;</span>/form<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 添加事件侦听器时使用事件捕获模式 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>div v-on:click.capture<span class="token operator">=</span><span class="token string">"doThis"</span><span class="token operator">></span><span class="token punctuation">..</span>.<span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 只当事件在该元素本身（而不是子元素）触发时触发回调 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>div v-on:click.self<span class="token operator">=</span><span class="token string">"doThat"</span><span class="token operator">></span><span class="token punctuation">..</span>.<span class="token operator">&lt;</span>/div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- click 事件只能点击一次，2.1.4版本新增 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>a v-on:click.once<span class="token operator">=</span><span class="token string">"doThis"</span><span class="token operator">></span><span class="token operator">&lt;</span>/a<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h4><p>Vue 允许为 v-on 在监听键盘事件时添加按键修饰符：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 只有在 keyCode 是 13 时调用 vm.submit<span class="token punctuation">(</span><span class="token punctuation">)</span> --<span class="token operator">></span>
+<span class="token operator">&lt;</span>input v-on:keyup.13<span class="token operator">=</span><span class="token string">"submit"</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>记住所有的 keyCode 比较困难，所以 Vue 为最常用的按键提供了别名：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 同上 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>input v-on:keyup.enter<span class="token operator">=</span><span class="token string">"submit"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- 缩写语法 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>input @keyup.enter<span class="token operator">=</span><span class="token string">"submit"</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>.enter
+.tab
+.delete (捕获 &quot;删除&quot; 和 &quot;退格&quot; 键)
+.esc
+.space
+.up
+.down
+.left
+.right
+.ctrl
+.alt
+.shift
+.meta
+</code></pre><p>实例:</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">!</span>-- Alt + C --<span class="token operator">></span>
+<span class="token operator">&lt;</span>input @keyup.alt.67<span class="token operator">=</span><span class="token string">"clear"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- Ctrl + Click --<span class="token operator">></span>
+<span class="token operator">&lt;</span>div @click.ctrl<span class="token operator">=</span><span class="token string">"doSomething"</span><span class="token operator">></span>Do something<span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Vue-js-表单"><a href="#Vue-js-表单" class="headerlink" title="Vue.js 表单"></a>Vue.js 表单</h3><p>用 v-model 指令在表单控件元素上创建双向数据绑定<br><img src="https://s2.ax1x.com/2019/05/17/ELuWmn.png" alt="ELuWmn.png"></p>
+<h4 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h4><p>复选框如果是一个为逻辑值，如果是多个则绑定到同一个数组：<br><img src="https://s2.ax1x.com/2019/05/17/ELub6J.png" alt="ELub6J.png"><br>结果:<br><img src="http://www.runoob.com/wp-content/uploads/2017/01/F6855065-AA5E-4BD7-B1F6-2350D4B4B1BB.jpg" alt="alt"></p>
+<h4 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h4><p>单选按钮的双向数据绑定：<br><img src="https://s2.ax1x.com/2019/05/17/ELuOmR.png" alt="ELuOmR.png"><br>结果:<br><img src="http://www.runoob.com/wp-content/uploads/2017/01/F60DA836-0E62-4C78-AEE0-2CFD6A2AE498.jpg" alt="alt"></p>
+<h4 id="select-列表"><a href="#select-列表" class="headerlink" title="select 列表"></a>select 列表</h4><p>下拉列表的双向数据绑定：<br><img src="https://s2.ax1x.com/2019/05/17/ELujTx.png" alt="ELujTx.png"><br>结果:<br><img src="http://www.runoob.com/wp-content/uploads/2017/01/D9FC72B9-35C1-4189-830F-87FD0A6734F8-1.jpg" alt="alt"></p>
+<h4 id="修饰符-1"><a href="#修饰符-1" class="headerlink" title="修饰符"></a>修饰符</h4><h6 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a>.lazy</h6><p>在默认情况下， v-model 在 input 事件中同步输入框的值与数据，但你可以添加一个修饰符 lazy ，从而转变为在 change 事件中同步：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 在 <span class="token string">"change"</span> 而不是 <span class="token string">"input"</span> 事件中更新 --<span class="token operator">></span>
+<span class="token operator">&lt;</span>input v-model.lazy<span class="token operator">=</span><span class="token string">"msg"</span> <span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h6 id="number"><a href="#number" class="headerlink" title=".number"></a>.number</h6><p>如果想自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值），可以添加一个修饰符 number 给 v-model 来处理输入值：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>input v-model.number<span class="token operator">=</span><span class="token string">"age"</span> type<span class="token operator">=</span><span class="token string">"number"</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这通常很有用，因为在 type=”number” 时 HTML 中输入的值也总是会返回字符串类型。</p>
+<h6 id="trim"><a href="#trim" class="headerlink" title=".trim"></a>.trim</h6><p>如果要自动过滤用户输入的首尾空格，可以添加 trim 修饰符到 v-model 上过滤输入：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>input v-model.trim<span class="token operator">=</span><span class="token string">"msg"</span><span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Vue-js-组件"><a href="#Vue-js-组件" class="headerlink" title="Vue.js 组件"></a>Vue.js 组件</h3><p>组件（Component）是 Vue.js 最强大的功能之一。<br>组件可以扩展 HTML 元素，封装可重用的代码。<br>组件系统让我们可以用独立可复用的小组件来构建大型应用，几乎任意类型的应用的界面都可以抽象<br>为一个组件树：<br><img src="http://www.runoob.com/wp-content/uploads/2017/01/components.png" alt="alt"><br>注册一个全局组件语法格式如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">Vue.component<span class="token punctuation">(</span>tagName, options<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>tagName 为组件名，options 为配置选项。注册后，我们可以使用以下方式来调用组件：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>tagName<span class="token operator">></span><span class="token operator">&lt;</span>/tagName<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Vue-js-自定义指令"><a href="#Vue-js-自定义指令" class="headerlink" title="Vue.js 自定义指令"></a>Vue.js 自定义指令</h3><p>除了默认设置的核心指令( v-model 和 v-show ), Vue 也允许注册自定义指令。<br>下面我们注册一个全局指令 v-focus, 该指令的功能是在页面加载时，元素获得焦点：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>p<span class="token operator">></span>页面载入时，input 元素自动获取焦点：<span class="token operator">&lt;</span>/p<span class="token operator">></span>
+    <span class="token operator">&lt;</span>input v-focus<span class="token operator">></span>
+<span class="token operator">&lt;</span>/div<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+// 注册一个全局自定义指令 v-focus
+Vue.directive<span class="token punctuation">(</span><span class="token string">'focus'</span>, <span class="token punctuation">{</span>
+  // 当绑定元素插入到 DOM 中。
+  inserted: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // 聚焦元素
+    el.focus<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+// 创建根实例
+new Vue<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el: <span class="token string">'#app'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token operator">&lt;</span>/script<span class="token operator">></span>
+<span class="token operator">&lt;</span>/body<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="钩子"><a href="#钩子" class="headerlink" title="钩子"></a>钩子</h4><h5 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h5><p>指令定义函数提供了几个钩子函数（可选）：</p>
+<pre><code>bind: 只调用一次，指令第一次绑定到元素时调用，用这个钩子函数可以定义一个在绑定时执行
+一次的初始化动作。
+inserted: 被绑定元素插入父节点时调用（父节点存在即可调用，不必存在于 document 中）。
+update: 被绑定元素所在的模板更新时调用，而不论绑定值是否变化。通过比较更新前后的绑定值，
+可以忽略不必要的模板更新（详细的钩子函数参数见下）。
+componentUpdated: 被绑定元素所在模板完成一次更新周期时调用。
+unbind: 只调用一次， 指令与元素解绑时调用。
+</code></pre><h5 id="钩子函数参数"><a href="#钩子函数参数" class="headerlink" title="钩子函数参数"></a>钩子函数参数</h5><p>钩子函数的参数有：</p>
+<pre><code>el: 指令所绑定的元素，可以用来直接操作 DOM 。
+binding: 一个对象，包含以下属性：
+    name: 指令名，不包括 v- 前缀。
+    value: 指令的绑定值， 例如： v-my-directive=&quot;1 + 1&quot;, value 的值是 2。
+    oldValue: 指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。
+    无论值是否改变都可用。
+    expression: 绑定值的表达式或变量名。 例如 v-my-directive=&quot;1 + 1&quot; ，
+    expression 的值是 &quot;1 + 1&quot;。
+    arg: 传给指令的参数。例如 v-my-directive:foo， arg 的值是 &quot;foo&quot;。
+    modifiers: 一个包含修饰符的对象。 例如： v-my-directive.foo.bar,
+    修饰符对象 modifiers 的值是 { foo: true, bar: true }。
+vnode: Vue 编译生成的虚拟节点。
+oldVnode: 上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。
+</code></pre><h3 id="Vue-js-过渡-amp-动画"><a href="#Vue-js-过渡-amp-动画" class="headerlink" title="Vue.js 过渡 &amp; 动画"></a>Vue.js 过渡 &amp; 动画</h3><h4 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h4><p>Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。<br>Vue 提供了内置的过渡封装组件，该组件用于包裹要实现过渡效果的组件。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>transition name <span class="token operator">=</span> <span class="token string">"nameoftransition"</span><span class="token operator">></span>
+   <span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token operator">&lt;</span>/div<span class="token operator">></span>
+<span class="token operator">&lt;</span>/transition<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>过渡其实就是一个淡入淡出的效果。Vue在元素显示与隐藏的过渡中，提供了 6 个 class 来切换：</p>
+<pre><code>v-enter：定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除。
+
+v-enter-active：定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之
+前生效，在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。
+
+v-enter-to: 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入之后下一帧生效
+(与此同时 v-enter 被移除)，在过渡/动画完成之后移除。
+
+v-leave: 定义离开过渡的开始状态。在离开过渡被触发时立刻生效，下一帧被移除。
+
+v-leave-active：定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时
+立刻生效，在过渡/动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数。
+
+v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。在离开过渡被触发之后下一帧生效
+(与此同时 v-leave 被删除)，在过渡/动画完成之后移除。
+</code></pre><p>####自定义过渡的类名<br>通过以下特性来自定义过渡类名：</p>
+<pre><code>enter-class
+enter-active-class
+enter-to-class (2.1.8+)
+leave-class
+leave-active-class
+leave-to-class (2.1.8+)
+</code></pre><p>自定义过渡的类名优先级高于普通的类名，这样就能很好的与第三方（如：animate.css）的动画库<br>结合使用。</p>
+<h4 id="同时使用过渡和动画"><a href="#同时使用过渡和动画" class="headerlink" title="同时使用过渡和动画"></a>同时使用过渡和动画</h4><p>Vue 为了知道过渡的完成，必须设置相应的事件监听器。它可以是 transitionend 或 animationend ，这取决于给元素应用的 CSS 规则。如果你使用其中任何一种，Vue 能自动识别类型并设置监听。</p>
+<p>但是，在一些场景中，你需要给同一个元素同时设置两种过渡动效，比如 animation 很快的被触发并完成了，而 transition 效果还没结束。在这种情况中，你就需要使用 type 特性并设置 animation 或 transition 来明确声明你需要 Vue 监听的类型。</p>
+<h4 id="显性的过渡持续时间"><a href="#显性的过渡持续时间" class="headerlink" title="显性的过渡持续时间"></a>显性的过渡持续时间</h4><p>在很多情况下，Vue 可以自动得出过渡效果的完成时机。默认情况下，Vue 会等待其在过渡效果的根元素的第一个 transitionend 或 animationend 事件。然而也可以不这样设定——比如，我们可以拥有一个精心编排的一系列过渡效果，其中一些嵌套的内部元素相比于过渡效果的根元素有延迟的或更长的过渡效果。<br>在这种情况下你可以用 <transition> 组件上的 duration 属性定制一个显性的过渡持续时间 (以毫秒计)</transition></p>
+<h4 id="JavaScript-钩子"><a href="#JavaScript-钩子" class="headerlink" title="JavaScript 钩子"></a>JavaScript 钩子</h4><pre class="line-numbers language-bash"><code class="language-bash">
+<span class="token operator">&lt;</span>transition
+  v-on:before-enter<span class="token operator">=</span><span class="token string">"beforeEnter"</span>
+  v-on:enter<span class="token operator">=</span><span class="token string">"enter"</span>
+  v-on:after-enter<span class="token operator">=</span><span class="token string">"afterEnter"</span>
+  v-on:enter-cancelled<span class="token operator">=</span><span class="token string">"enterCancelled"</span>
+
+  v-on:before-leave<span class="token operator">=</span><span class="token string">"beforeLeave"</span>
+  v-on:leave<span class="token operator">=</span><span class="token string">"leave"</span>
+  v-on:after-leave<span class="token operator">=</span><span class="token string">"afterLeave"</span>
+  v-on:leave-cancelled<span class="token operator">=</span><span class="token string">"leaveCancelled"</span>
+<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token punctuation">..</span>. --<span class="token operator">></span>
+<span class="token operator">&lt;</span>/transition<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">
+// <span class="token punctuation">..</span>.
+methods: <span class="token punctuation">{</span>
+  // --------
+  // 进入中
+  // --------
+
+  beforeEnter: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>,
+  // 此回调函数是可选项的设置
+  // 与 CSS 结合时使用
+  enter: <span class="token keyword">function</span> <span class="token punctuation">(</span>el, done<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+    done<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>,
+  afterEnter: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>,
+  enterCancelled: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>,
+
+  // --------
+  // 离开时
+  // --------
+
+  beforeLeave: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>,
+  // 此回调函数是可选项的设置
+  // 与 CSS 结合时使用
+  leave: <span class="token keyword">function</span> <span class="token punctuation">(</span>el, done<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+    done<span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>,
+  afterLeave: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>,
+  // leaveCancelled 只用于 v-show 中
+  leaveCancelled: <span class="token keyword">function</span> <span class="token punctuation">(</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    // <span class="token punctuation">..</span>.
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="初始渲染的过渡"><a href="#初始渲染的过渡" class="headerlink" title="初始渲染的过渡"></a>初始渲染的过渡</h3><p>可以通过 appear 特性设置节点在初始渲染的过渡</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>transition appear<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token punctuation">..</span>. --<span class="token operator">></span>
+<span class="token operator">&lt;</span>/transition<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="多个元素的过渡"><a href="#多个元素的过渡" class="headerlink" title="多个元素的过渡"></a>多个元素的过渡</h3><p>设置多个元素的过渡，一般列表与描述：<br>需要注意的是当有相同标签名的元素切换时，需要通过 key 特性设置唯一的值来标记以让 Vue 区分它们，否则 Vue 为了效率只会替换相同标签内部的内容。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>transition<span class="token operator">></span>
+  <span class="token operator">&lt;</span>table v-if<span class="token operator">=</span><span class="token string">"items.length > 0"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span>-- <span class="token punctuation">..</span>. --<span class="token operator">></span>
+  <span class="token operator">&lt;</span>/table<span class="token operator">></span>
+  <span class="token operator">&lt;</span>p v-else<span class="token operator">></span>抱歉，没有找到您查找的内容。<span class="token operator">&lt;</span>/p<span class="token operator">></span>
+<span class="token operator">&lt;</span>/transition<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Vue-js-Ajax-vue-resource"><a href="#Vue-js-Ajax-vue-resource" class="headerlink" title="Vue.js Ajax(vue-resource)"></a>Vue.js Ajax(vue-resource)</h3><p>Vue 要实现异步加载需要使用到 vue-resource 库。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span>/script<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h5 id="Get-请求"><a href="#Get-请求" class="headerlink" title="Get 请求"></a>Get 请求</h5><p><img src="https://s2.ax1x.com/2019/05/17/ELKyAx.png" alt="ELKyAx.png"><br>点击:<br><img src="https://s2.ax1x.com/2019/05/17/EqweoD.png" alt="EqweoD.png"><br>结果:<br><img src="https://s2.ax1x.com/2019/05/17/Eqw1yt.png" alt="Eqw1yt.png"></p>
+<p>如果需要传递数据，可以使用 this.$http.get(‘get.php’,jsonData) 格式，第二个参数<br>jsonData 就是传到后端的数据。</p>
+<p><img src="https://s2.ax1x.com/2019/05/17/ELK4ud.png" alt="ELK4ud.png"></p>
+<h5 id="post-请求"><a href="#post-请求" class="headerlink" title="post 请求"></a>post 请求</h5><p>post 发送数据到后端，需要第三个参数 {emulateJSON:true}。<br>emulateJSON 的作用： 如果Web服务器无法处理编码为 application/json 的请求，<br>可以启用 emulateJSON 选项。<br><img src="https://s2.ax1x.com/2019/05/17/ELKTEt.png" alt="ELKTEt.png"></p>
+<h5 id="语法-amp-API"><a href="#语法-amp-API" class="headerlink" title="语法 &amp; API"></a>语法 &amp; API</h5><p>可以使用全局对象方式 Vue.http 或者在一个 Vue 实例的内部使用 this.$http来发起 HTTP 请求<br><img src="https://s2.ax1x.com/2019/05/17/ELFGRI.png" alt="ELFGRI.png"></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">请求的目标URL</td>
+</tr>
+<tr>
+<td style="text-align:left">body</td>
+<td style="text-align:left">Object, FormData, string</td>
+<td style="text-align:left">作为请求体发送的数据</td>
+</tr>
+<tr>
+<td style="text-align:left">headers</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">作为请求头部发送的头部对象</td>
+</tr>
+<tr>
+<td style="text-align:left">params</td>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">作为URL参数的参数对象</td>
+</tr>
+<tr>
+<td style="text-align:left">method</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">HTTP方法 (例如GET，POST，…)</td>
+</tr>
+<tr>
+<td style="text-align:left">timeout</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">请求超时（单位：毫秒） (0表示永不超时)</td>
+</tr>
+<tr>
+<td style="text-align:left">before</td>
+<td style="text-align:left">function(request)</td>
+<td style="text-align:left">在请求发送之前修改请求的回调函数</td>
+</tr>
+<tr>
+<td style="text-align:left">progress</td>
+<td style="text-align:left">function(event)</td>
+<td style="text-align:left">用于处理上传进度的回调函数 ProgressEvent</td>
+</tr>
+<tr>
+<td style="text-align:left">credentials</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">是否需要出示用于跨站点请求的凭据</td>
+</tr>
+<tr>
+<td style="text-align:left">emulateHTTP</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">是否需要通过设置X-HTTP-Method-Override头部并且以传统POST方式发送PUT，PATCH和DELETE请求。</td>
+</tr>
+<tr>
+<td style="text-align:left">emulateJSON</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">设置请求体的类型为application/x-www-form-urlencoded</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Vue-js-响应接口"><a href="#Vue-js-响应接口" class="headerlink" title="Vue.js 响应接口"></a>Vue.js 响应接口</h3><p>Vue 可以添加数据动态响应接口。<br>例如以下实例，我们通过使用 $watch 属性来实现数据的监听，$watch 必须添加在 Vue 实例之外<br>才能实现正确的响应。<br>实例中通过点击按钮计数器会加 1。setTimeout 设置 10 秒后计算器的值加上 20 。<br><img src="https://s2.ax1x.com/2019/05/17/ELFuqO.png" alt="ELFuqO.png"></p>
+<h5 id="Vue-set"><a href="#Vue-set" class="headerlink" title="Vue.set"></a>Vue.set</h5><p>Vue.set 方法用于设置对象的属性，它可以解决 Vue 无法检测添加属性的限制，语法格式如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">Vue.set<span class="token punctuation">(</span> target, key, value <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参数说明：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">target: 可以是对象或数组
+key <span class="token keyword">:</span> 可以是字符串或数字
+value: 可以是任何类型
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="Vue-delete"><a href="#Vue-delete" class="headerlink" title="Vue.delete"></a>Vue.delete</h5><p>Vue.delete 用于删除动态添加的属性 语法格式：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">Vue.delete<span class="token punctuation">(</span> target, key <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>参数说明：</p>
+<pre class="line-numbers language-bash"><code class="language-bash">target: 可以是对象或数组
+key <span class="token keyword">:</span> 可以是字符串或数字
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</the></excerpt>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/09/04/Vue/">Vue.js框架</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
+        <p><span>发布时间:</span>2019年09月04日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年05月20日 - 14时26分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/04/Vue/" title="Vue.js框架">http://yoursite.com/2019/09/04/Vue/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/09/04/Vue/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/09/04/集合/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          集合
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/04/Spring注解大全/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring常用注解</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-js框架"><span class="toc-number">1.</span> <span class="toc-text">Vue.js框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-安装"><span class="toc-number">1.0.1.</span> <span class="toc-text">Vue.js 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#查看版本"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">查看版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#升级-npm"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">升级 npm</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#升级或安装-cnpm"><span class="toc-number">1.0.1.0.3.</span> <span class="toc-text">升级或安装 cnpm</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#最新稳定版"><span class="toc-number">1.0.1.0.4.</span> <span class="toc-text">最新稳定版</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#全局安装-vue-cli"><span class="toc-number">1.0.1.0.5.</span> <span class="toc-text">全局安装 vue-cli</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建一个基于-webpack-模板的新项目"><span class="toc-number">1.0.1.0.6.</span> <span class="toc-text">创建一个基于 webpack 模板的新项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#这里需要进行一些配置，默认回车即可"><span class="toc-number">1.0.1.0.7.</span> <span class="toc-text">这里需要进行一些配置，默认回车即可</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#目录结构"><span class="toc-number">1.0.2.</span> <span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js起步"><span class="toc-number">1.0.3.</span> <span class="toc-text">Vue.js起步</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue语法"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">Vue语法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#插值"><span class="toc-number">1.0.3.1.1.</span> <span class="toc-text">插值</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#文本"><span class="toc-number">1.0.3.1.1.1.</span> <span class="toc-text">文本</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Html"><span class="toc-number">1.0.3.1.1.2.</span> <span class="toc-text">Html</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#属性"><span class="toc-number">1.0.3.1.1.3.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#表达式"><span class="toc-number">1.0.3.1.1.4.</span> <span class="toc-text">表达式</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#指令"><span class="toc-number">1.0.3.1.1.5.</span> <span class="toc-text">指令</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#参数"><span class="toc-number">1.0.3.1.1.6.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修饰符"><span class="toc-number">1.0.3.1.1.7.</span> <span class="toc-text">修饰符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#用户输入"><span class="toc-number">1.0.3.1.1.8.</span> <span class="toc-text">用户输入</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#过滤器"><span class="toc-number">1.0.3.1.1.9.</span> <span class="toc-text">过滤器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#缩写"><span class="toc-number">1.0.3.1.1.10.</span> <span class="toc-text">缩写</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js-条件与循环"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">Vue.js 条件与循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#循环语句"><span class="toc-number">1.0.3.3.</span> <span class="toc-text">循环语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js-计算属性"><span class="toc-number">1.0.3.4.</span> <span class="toc-text">Vue.js 计算属性</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#computed-vs-methods"><span class="toc-number">1.0.3.4.0.1.</span> <span class="toc-text">computed vs methods</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#computed-setter"><span class="toc-number">1.0.3.4.0.2.</span> <span class="toc-text">computed setter</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js-监听属性"><span class="toc-number">1.0.3.5.</span> <span class="toc-text">Vue.js 监听属性</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-样式绑定"><span class="toc-number">1.0.4.</span> <span class="toc-text">Vue.js 样式绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js-class"><span class="toc-number">1.0.4.1.</span> <span class="toc-text">Vue.js class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class属性绑定"><span class="toc-number">1.0.4.2.</span> <span class="toc-text">class属性绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组语法"><span class="toc-number">1.0.4.3.</span> <span class="toc-text">数组语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vue-js-style-内联样式"><span class="toc-number">1.0.4.4.</span> <span class="toc-text">Vue.js style(内联样式)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-事件处理器"><span class="toc-number">1.0.5.</span> <span class="toc-text">Vue.js 事件处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#事件修饰符"><span class="toc-number">1.0.5.1.</span> <span class="toc-text">事件修饰符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按键修饰符"><span class="toc-number">1.0.5.2.</span> <span class="toc-text">按键修饰符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-表单"><span class="toc-number">1.0.6.</span> <span class="toc-text">Vue.js 表单</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#复选框"><span class="toc-number">1.0.6.1.</span> <span class="toc-text">复选框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单选按钮"><span class="toc-number">1.0.6.2.</span> <span class="toc-text">单选按钮</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#select-列表"><span class="toc-number">1.0.6.3.</span> <span class="toc-text">select 列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修饰符-1"><span class="toc-number">1.0.6.4.</span> <span class="toc-text">修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#lazy"><span class="toc-number">1.0.6.4.0.1.</span> <span class="toc-text">.lazy</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#number"><span class="toc-number">1.0.6.4.0.2.</span> <span class="toc-text">.number</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#trim"><span class="toc-number">1.0.6.4.0.3.</span> <span class="toc-text">.trim</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-组件"><span class="toc-number">1.0.7.</span> <span class="toc-text">Vue.js 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-自定义指令"><span class="toc-number">1.0.8.</span> <span class="toc-text">Vue.js 自定义指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#钩子"><span class="toc-number">1.0.8.1.</span> <span class="toc-text">钩子</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#钩子函数"><span class="toc-number">1.0.8.1.1.</span> <span class="toc-text">钩子函数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#钩子函数参数"><span class="toc-number">1.0.8.1.2.</span> <span class="toc-text">钩子函数参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-过渡-amp-动画"><span class="toc-number">1.0.9.</span> <span class="toc-text">Vue.js 过渡 &amp; 动画</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#过渡"><span class="toc-number">1.0.9.1.</span> <span class="toc-text">过渡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#同时使用过渡和动画"><span class="toc-number">1.0.9.2.</span> <span class="toc-text">同时使用过渡和动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#显性的过渡持续时间"><span class="toc-number">1.0.9.3.</span> <span class="toc-text">显性的过渡持续时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JavaScript-钩子"><span class="toc-number">1.0.9.4.</span> <span class="toc-text">JavaScript 钩子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始渲染的过渡"><span class="toc-number">1.0.10.</span> <span class="toc-text">初始渲染的过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多个元素的过渡"><span class="toc-number">1.0.11.</span> <span class="toc-text">多个元素的过渡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-Ajax-vue-resource"><span class="toc-number">1.0.12.</span> <span class="toc-text">Vue.js Ajax(vue-resource)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Get-请求"><span class="toc-number">1.0.12.0.1.</span> <span class="toc-text">Get 请求</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#post-请求"><span class="toc-number">1.0.12.0.2.</span> <span class="toc-text">post 请求</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#语法-amp-API"><span class="toc-number">1.0.12.0.3.</span> <span class="toc-text">语法 &amp; API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue-js-响应接口"><span class="toc-number">1.0.13.</span> <span class="toc-text">Vue.js 响应接口</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Vue-set"><span class="toc-number">1.0.13.0.1.</span> <span class="toc-text">Vue.set</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Vue-delete"><span class="toc-number">1.0.13.0.2.</span> <span class="toc-text">Vue.delete</span></a></li></ol></li>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'tangjingj',
+      repo: 'tangjingj.github.io',
+      oauth: {
+        client_id: '691f35b7ddfc3e19f192',
+        client_secret: '5804da0ae4bf941e1345c3bf85cd8d2fd9288039',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/09/04/集合/" title="上一篇: 集合">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/09/04/Spring注解大全/" title="下一篇: Spring常用注解">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 tang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit">本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

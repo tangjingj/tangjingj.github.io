@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Python应用场景 | myBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python应用场景Python常被成为胶水语言,能够把其他语言制作的各种模块(尤其是C/C++)轻松联接在一起.常见的一种应用情形是,使用Python快速生成程序的原型(有时是程序的最终界面),然后对其中特别要求的部分,用更合适的语言改写,如3D游戏中的图形渲染模块,性能要求特别高,就用C/C++重写,而后封装为Python可以调用的扩展类库 Python特点(1)使用C语言开发,但没有C语言">
+<meta name="keywords" content="菜鸟学习,Python,使用场景">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python应用场景">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/Python应用场景/index.html">
+<meta property="og:site_name" content="myBlog">
+<meta property="og:description" content="Python应用场景Python常被成为胶水语言,能够把其他语言制作的各种模块(尤其是C/C++)轻松联接在一起.常见的一种应用情形是,使用Python快速生成程序的原型(有时是程序的最终界面),然后对其中特别要求的部分,用更合适的语言改写,如3D游戏中的图形渲染模块,性能要求特别高,就用C/C++重写,而后封装为Python可以调用的扩展类库 Python特点(1)使用C语言开发,但没有C语言">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-20T06:30:41.958Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python应用场景">
+<meta name="twitter:description" content="Python应用场景Python常被成为胶水语言,能够把其他语言制作的各种模块(尤其是C/C++)轻松联接在一起.常见的一种应用情形是,使用Python快速生成程序的原型(有时是程序的最终界面),然后对其中特别要求的部分,用更合适的语言改写,如3D游戏中的图形渲染模块,性能要求特别高,就用C/C++重写,而后封装为Python可以调用的扩展类库 Python特点(1)使用C语言开发,但没有C语言">
+  
+    <link rel="alternative" href="/atom.xml" title="myBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">tang</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://tangjingj.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">tang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">tang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Python应用场景" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/04/Python应用场景/" class="article-date">
+      <time datetime="2019-09-04T07:19:52.530Z" itemprop="datePublished">2019-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python应用场景
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/使用场景/">使用场景</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/菜鸟学习/">菜鸟学习</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><excerpt in index | 首页摘要></excerpt></p>
+<h1 id="Python应用场景"><a href="#Python应用场景" class="headerlink" title="Python应用场景"></a>Python应用场景</h1><p>Python常被成为胶水语言,能够把其他语言制作的各种模块(尤其是C/C++)轻松联接在一起.<br>常见的一种应用情形是,使用Python快速生成程序的原型(有时是程序的最终界面),然后对其中特别要求的部分,用更合适的语言改写,如3D游戏中的图形渲染模块,性能要求特别高,就用C/C++重写,而后封装为Python可以调用的扩展类库</p>
+<h4 id="Python特点"><a href="#Python特点" class="headerlink" title="Python特点"></a>Python特点</h4><p>(1)使用C语言开发,但没有C语言中的指针等复杂的数据类型<br>(2)具有很强的面向对象特性,且简化了面向对象的实现<br>(3)代码块使用空格或制表符缩进的方式分割代码<br>(4)仅有31个保留字,而且没有分号,begin,end等标记<br>(5)是强类型语言,变量创建后会对应一种数据类型,出现统一表达       式中的不同类型的变量需要做类型转换<br><a id="more"></a></p>
+<the rest of contents | 余下全文>
+
+<h4 id="Python的应用"><a href="#Python的应用" class="headerlink" title="Python的应用"></a>Python的应用</h4><p>系统编程:提供API,方便进行系统维护和管理</p>
+<p>图形处理:有PIL,TKinter等图形库支持,方便进行图形处理</p>
+<p>数学处理：NumPy扩展提供大量与许多标准数学库的接口。</p>
+<p>文本处理：python提供的re模块能支持正则表达式，还提供SGML，XML分析模块，许多程序员利用python进行XML程序的开发</p>
+<p>数据库编程：程序员可通过遵循PythonDB-API（数据库应用程序编程接口）规范的模块与                       MicrosoftSQLServer，Oracle，Sybase，DB2，MySQL、SQLite等 数据库通信。python自带有一个Gadfly模块，提供了一个完整的SQL环境。</p>
+<p>网络编程：提供丰富的模块支持sockets编程，能方便快速地开发分布式应用程序。很多大规模软件开发计划例如Zope，Mnet及BitTorrent.Google都在广泛地使用它。</p>
+<p>Web编程：应用的开发语言，支持最新的XML技术。</p>
+<p>多媒体应用：Python的PyOpenGL模块封装了“OpenGL应用程序编程接口”，能进行二维和三维图像处理。PyGame模块可用于编写游戏软件。</p>
+<p>pymo引擎：PYMO全称为pythonmemoriesoff，是一款运行于SymbianS60V3，Symbian3，S60V5，Symbian3，Android系统上的AVG游戏引擎。因其基于python2.0平台开发，并且适用于创建秋之回忆（memoriesoff）风格的AVG游戏，故命名为PYMO。</p>
+<p>黑客编程：python有一个hack的库，内置了你熟悉的或不熟悉的函数，但是缺少成就感。</p>
+</the>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/09/04/Python应用场景/">Python应用场景</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
+        <p><span>发布时间:</span>2019年09月04日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年05月20日 - 14时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/04/Python应用场景/" title="Python应用场景">http://yoursite.com/2019/09/04/Python应用场景/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/09/04/Python应用场景/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/09/04/Scheduled注解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Spring定时任务 @Scheduled注解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/04/python基础知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python基础知识</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Python应用场景"><span class="toc-number">1.</span> <span class="toc-text">Python应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Python特点"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Python特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python的应用"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Python的应用</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'tangjingj',
+      repo: 'tangjingj.github.io',
+      oauth: {
+        client_id: '691f35b7ddfc3e19f192',
+        client_secret: '5804da0ae4bf941e1345c3bf85cd8d2fd9288039',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/09/04/Scheduled注解/" title="上一篇: Spring定时任务 @Scheduled注解">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/09/04/python基础知识/" title="下一篇: Python基础知识">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 tang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit">本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

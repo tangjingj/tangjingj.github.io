@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Spring定时任务 @Scheduled注解 | myBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="定时任务@Scheduled注解1.配置文件使用spring @Scheduled注解执行定时任务添加配置文件: &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;">
+<meta name="keywords" content="Spring,Scheduled注解,cron,定时任务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring定时任务 @Scheduled注解">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/Scheduled注解/index.html">
+<meta property="og:site_name" content="myBlog">
+<meta property="og:description" content="定时任务@Scheduled注解1.配置文件使用spring @Scheduled注解执行定时任务添加配置文件: &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s2.ax1x.com/2019/05/21/EztVoV.png">
+<meta property="og:updated_time" content="2019-05-21T03:40:19.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring定时任务 @Scheduled注解">
+<meta name="twitter:description" content="定时任务@Scheduled注解1.配置文件使用spring @Scheduled注解执行定时任务添加配置文件: &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;beans xmlns=&amp;quot;http://www.springframework.org/schema/beans&amp;quot;">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/05/21/EztVoV.png">
+  
+    <link rel="alternative" href="/atom.xml" title="myBlog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">tang</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">作品展示</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://tangjingj.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">tang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">tang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">作品展示</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#49;&#50;&#48;&#52;&#53;&#51;&#49;&#55;&#57;&#54;&#64;&#113;&#113;&#46;&#99;&#111;&#109;" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/tangjingj" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="https://weibo.com/3955528883/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Scheduled注解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/04/Scheduled注解/" class="article-date">
+      <time datetime="2019-09-04T07:19:52.533Z" itemprop="datePublished">2019-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring定时任务 @Scheduled注解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Java/">Java</a><a class="article-category-link" href="/categories/Java/Spring/">Spring</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scheduled注解/">Scheduled注解</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cron/">cron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/定时任务/">定时任务</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <excerpt in index | 首页摘要>
+
+<h2 id="定时任务-Scheduled注解"><a href="#定时任务-Scheduled注解" class="headerlink" title="定时任务@Scheduled注解"></a>定时任务@Scheduled注解</h2><h3 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1.配置文件"></a>1.配置文件</h3><p>使用spring @Scheduled注解执行定时任务添加配置文件:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xmlns:task=&quot;http://www.springframework.org/schema/task&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd&quot;
+    default-autowire=&quot;byName&quot; default-lazy-init=&quot;false&quot;&gt;
+
+    &lt;!-- 定时任务相关配置 --&gt;
+    &lt;task:executor id=&quot;executor&quot; pool-size=&quot;10&quot; queue-capacity=&quot;128&quot;/&gt;
+    &lt;task:scheduler id=&quot;scheduler&quot; pool-size=&quot;10&quot;/&gt;
+    &lt;task:annotation-driven executor=&quot;executor&quot; scheduler=&quot;scheduler&quot; proxy-target-class=&quot;true&quot;/&gt;
+&lt;/beans&gt;
+</code></pre><a id="more"></a>
+<the rest of contents | 余下全文>
+
+<p>spring boot等框架集成了schedule,添加maven依赖包即可</p>
+<pre><code>&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre><p>启动类，添加启动注解<br>在springboot入口或者配置类中增加@EnableScheduling注解即可启用定时任务。</p>
+<pre><code>@EnableScheduling
+@SpringBootApplication
+public class ScheduleApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ScheduleApplication.class, args);
+    }
+}
+</code></pre><h3 id="2-调用"><a href="#2-调用" class="headerlink" title="2.调用"></a>2.调用</h3><p>在Java代码中使用<br><img src="https://s2.ax1x.com/2019/05/21/EztVoV.png" alt="EztVoV.png"></p>
+<pre><code>@Component
+public class testScheduled {
+
+    @Scheduled(cron = &quot;0/5 * * * * ?&quot;)//每5秒执行一次
+    public void run() {
+
+  }
+}
+</code></pre><h3 id="3-关于cron参数"><a href="#3-关于cron参数" class="headerlink" title="3.关于cron参数"></a>3.关于cron参数</h3><p><a href="http://cron.qqe2.com/" target="_blank" rel="noopener">cron参数生成器</a></p>
+<p>一个cron表达式有至少6个或7个(一般是6个)有空格分隔的时间元素。</p>
+<p>按顺序依次为</p>
+<ul>
+<li>秒（0~59）</li>
+<li>分钟（0~59）</li>
+<li>小时（0~23）</li>
+<li>天（月）（0~31，但是你需要考虑你月的天数）</li>
+<li>月（0~11）</li>
+<li>天（星期）（1~7 1=SUN 或 SUN，MON，TUE，WED，THU，FRI，SAT）</li>
+<li>年份（1970－2099）——@Scheduled是不支持的，spring quartz支持</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">允许值</th>
+<th style="text-align:left">允许的特殊字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">秒</td>
+<td style="text-align:left">0-59</td>
+<td style="text-align:left">, - * /</td>
+</tr>
+<tr>
+<td style="text-align:left">分</td>
+<td style="text-align:left">0-59</td>
+<td style="text-align:left">, - * /</td>
+</tr>
+<tr>
+<td style="text-align:left">小时</td>
+<td style="text-align:left">0-23</td>
+<td style="text-align:left">, - * /</td>
+</tr>
+<tr>
+<td style="text-align:left">日期</td>
+<td style="text-align:left">1-31</td>
+<td style="text-align:left">, - * ? / L W C</td>
+</tr>
+<tr>
+<td style="text-align:left">月份</td>
+<td style="text-align:left">1-12 或者 JAN-DEC</td>
+<td style="text-align:left">, - * /</td>
+</tr>
+<tr>
+<td style="text-align:left">星期</td>
+<td style="text-align:left">1-7 或者 SUN-SAT</td>
+<td style="text-align:left">, - * ? / L C #</td>
+</tr>
+<tr>
+<td style="text-align:left">年</td>
+<td style="text-align:left">留空, 1970-2099</td>
+<td style="text-align:left">, - * /</td>
+</tr>
+</tbody>
+</table>
+<h4 id="解析"><a href="#解析" class="headerlink" title="解析:"></a>解析:</h4><p>如: 0 0/1 <em> </em> * ?  每分钟执行一次   </p>
+<ol>
+<li>“ <em> ” 字符被用来指定所有的值<br>若” </em> “在分钟的字段域里表示“每分钟”</li>
+<li>“?”字符只在日期域和星期域中使用。它被用来指定“非明确的值”。当你需要通过在这两个域中的一个来指定一些东西的时候，它是有用的。<br>月份中的日期和星期中的日期这两个元素时互斥的一起应该通过设置一个问号来表明不想设置那个字段。</li>
+<li>“-”字符被用来指定一个范围。如：“10-12”在小时域意味着“10点、11点、12点”。</li>
+<li>“,”字符被用来指定另外的值。如：“MON,WED,FRI”在星期域里表示”星期一、星期三、星期五”。</li>
+<li><p>“/”字符用于指定增量。<br>如：</p>
+<pre><code> “0/15”在秒域意思是每分钟的0，15，30和45秒。
+ “5/15”在分钟域表示每小时的5，20，35和50。
+</code></pre></li>
+<li><p>符号“ <em> ”在“/”前面（如：</em> /10）等价于0在“/”前面（如：0/10）。</p>
+<pre><code> 表达式的每个数值域都是一个有最大值和最小值的集合
+ 如： 秒域和分钟域的集合是0-59，日期域是1-31，月份域是1-12。
+ 字符“/”可以帮助你在每个字符域中取相应的数值。如：“7/6”在月份域的时候只
+ 有当7月的时候才会触发，并不是表示每个6月。
+</code></pre></li>
+<li><p>L是‘last’的省略写法可以表示day-of-month和day-of-week域，但在两个字段中的意思不同，例如day-of- month域中表示一个月的最后一天。如果在day-of-week域表示‘7’或者‘SAT’，如果在day-of-week域中前面加上数字，它表示 一个月的最后几天，例如‘6L’就表示一个月的最后一个星期五。</p>
+</li>
+<li>字符“W”只允许日期域出现。这个字符用于指定日期的最近工作日。例如：如果你在日期域中写 “15W”，表示：这个月15号最近的工作日。所以，如果15号是周六，则任务会在14号触发。如果15好是周日，则任务会在周一也就是16号触发。如果 是在日期域填写“1W”即使1号是周六，那么任务也只会在下周一，也就是3号触发，“W”字符指定的最近工作日是不能够跨月份的。字符“W”只能配合一个 单独的数值使用，不能够是一个数字段，如：1-15W是错误的。</li>
+<li>“L”和“W”可以在日期域中联合使用，LW表示这个月最后一周的工作日。</li>
+<li>字符“#”只允许在星期域中出现。这个字符用于指定本月的某某天。例如：“6#3”表示本月第三周的星期五（6表示星期五，3表示第三周）。“2#1”表示本月第一周的星期一。“4#5”表示第五周的星期三。</li>
+<li>字符“C”允许在日期域和星期域出现。这个字符依靠一个指定的“日历”。也就是说这个表达式的值依赖于相关的“日历”的计算结果，如果没有“日历” 关联，则等价于所有包含的“日历”。如：日期域是“5C”表示关联“日历”中第一天，或者这个月开始的第一天的后5天。星期域是“1C”表示关联“日历” 中第一天，或者星期的第一天的后1天，也就是周日的后一天（周一）。</li>
+</ol>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例:"></a>举例:</h4><p>每隔5秒执行一次：”<em>/5 </em> <em> </em> * ?”</p>
+<p>每隔1分钟执行一次：”0 <em>/1 </em> <em> </em> ?”</p>
+<p>每天23点执行一次：”0 0 23 <em> </em> ?”</p>
+<p>每小时执行一次: “0 0 0/1 <em> </em> ?”</p>
+<p>每天执行一次: “0 0 0 1/1 * ?”</p>
+<p>每天凌晨1点执行一次：”0 0 1 <em> </em> ?”</p>
+<p>每月1号凌晨1点执行一次：”0 0 1 1 * ?”</p>
+<p>每月最后一天23点执行一次：”0 0 23 L * ?”</p>
+<p>每周星期天凌晨1点实行一次：”0 0 1 ? * L”</p>
+<p>在26分、29分、33分执行一次：”0 26,29,33 <em> </em> * ?”</p>
+<p>每天的0点、13点、18点、21点都执行一次：”0 0 0,13,18,21 <em> </em> ?”</p>
+<p>表示在每月的1日的凌晨2点调度任务：”0 0 2 1 <em> ? </em>“</p>
+<p>表示周一到周五每天上午10：15执行作业：”0 15 10 ? * MON-FRI”</p>
+<p>表示2002-2006年的每个月的最后一个星期五上午10:15执行：”0 15 10 ? 6L 2002-2006”</p>
+<h3 id="4-局限性——-Scheduled的cron无法指定执行的年份"><a href="#4-局限性——-Scheduled的cron无法指定执行的年份" class="headerlink" title="4.局限性——@Scheduled的cron无法指定执行的年份"></a>4.局限性——@Scheduled的cron无法指定执行的年份</h3><p>若执行以下代码</p>
+<pre><code>    @Scheduled(cron = &quot;0 18 10 * * ? 2016-2016&quot;)
+    public void testTaskWithDate() {
+        logger.info(&quot;测试2016.定时任务&quot;);
+    }
+</code></pre><p>将会报下面的错误</p>
+<pre><code>Cron expression must consist of 6 fields (found 7 in &quot;0 18 10 * * ? 2016-2016&quot;)
+</code></pre><p>错误原因是:</p>
+<pre><code>/**
+ * Parse the given pattern expression.
+ */
+private void parse(String expression) throws IllegalArgumentException {
+    String[] fields = StringUtils.tokenizeToStringArray(expression, &quot; &quot;);
+    if (fields.length != 6) {
+        throw new IllegalArgumentException(String.format(&quot;&quot;
+                + &quot;cron expression must consist of 6 fields (found %d in %s)&quot;, fields.length, expression));
+    }
+</code></pre><pre><code>spring taks 不支持年位定时,但是制定到年份，会存在一个问题，就是在你在过了这个时间后
+再启动项目的时候，他会一直报一个memory leak的错误，大概的意思是你的定时任务将永远
+不会被执行，导致项目一直启动不了。
+</code></pre></the></excerpt>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipayimg.jpg" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/wechatimg.jpg" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
+        <p><span>发布时间:</span>2019年09月04日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年05月21日 - 11时40分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/04/Scheduled注解/" title="Spring定时任务 @Scheduled注解">http://yoursite.com/2019/09/04/Scheduled注解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/09/04/Scheduled注解/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/09/04/spring boot(一)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Spring Boot(一)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/04/Python应用场景/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python应用场景</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定时任务-Scheduled注解"><span class="toc-number">1.</span> <span class="toc-text">定时任务@Scheduled注解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-配置文件"><span class="toc-number">1.1.</span> <span class="toc-text">1.配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-调用"><span class="toc-number">1.2.</span> <span class="toc-text">2.调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-关于cron参数"><span class="toc-number">1.3.</span> <span class="toc-text">3.关于cron参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解析"><span class="toc-number">1.3.1.</span> <span class="toc-text">解析:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#举例"><span class="toc-number">1.3.2.</span> <span class="toc-text">举例:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-局限性——-Scheduled的cron无法指定执行的年份"><span class="toc-number">1.4.</span> <span class="toc-text">4.局限性——@Scheduled的cron无法指定执行的年份</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'tangjingj',
+      repo: 'tangjingj.github.io',
+      oauth: {
+        client_id: '691f35b7ddfc3e19f192',
+        client_secret: '5804da0ae4bf941e1345c3bf85cd8d2fd9288039',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/09/04/spring boot(一)/" title="上一篇: Spring Boot(一)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/09/04/Python应用场景/" title="下一篇: Python应用场景">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 tang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv">
+                        <span id="site-visit">本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
