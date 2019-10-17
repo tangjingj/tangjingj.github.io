@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="myBlog">
 <meta property="og:description" content="servlet具体的运行过程浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过servic">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-16T09:38:56.145Z">
+<meta property="og:updated_time" content="2019-10-17T05:50:44.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sevlet知识">
 <meta name="twitter:description" content="servlet具体的运行过程浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过servic">
@@ -257,16 +257,16 @@
       
           
         <p><excerpt in index | 首页摘要></excerpt></p>
-<h4 id="servlet具体的运行过程"><a href="#servlet具体的运行过程" class="headerlink" title="servlet具体的运行过程"></a>servlet具体的运行过程</h4><p>浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过service()方法,再通过request对象获取数据,写入数据到response对象中(HTTPResponse中响应状态行,响应头,响应正文,状态行设置状态代码,响应头同Httpcontext中的SAXreader解析对应介质类型映射,发送响应正文),发送响应给浏览器,浏览器解析响应数据包,显示页面.<br><a id="more"></a></p>
+<h3 id="servlet具体的运行过程"><a href="#servlet具体的运行过程" class="headerlink" title="servlet具体的运行过程"></a>servlet具体的运行过程</h3><p>浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过service()方法,再通过request对象获取数据,写入数据到response对象中(HTTPResponse中响应状态行,响应头,响应正文,状态行设置状态代码,响应头同Httpcontext中的SAXreader解析对应介质类型映射,发送响应正文),发送响应给浏览器,浏览器解析响应数据包,显示页面.<br><a id="more"></a></p>
 <p><the rest of contents | 余下全文></the></p>
-<h4 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h4><p>1.servlet:sun公司制定的一种用来扩展web服务器功能的组件规范<br>web服务器只能处理静态资源的请求,即需要事先将html文档准备好,并存到web服务器上,不能处理动态资源的请求,需要servlet扩展.</p>
+<h3 id="servlet"><a href="#servlet" class="headerlink" title="servlet"></a>servlet</h3><p>1.servlet:sun公司制定的一种用来扩展web服务器功能的组件规范<br>web服务器只能处理静态资源的请求,即需要事先将html文档准备好,并存到web服务器上,不能处理动态资源的请求,需要servlet扩展.</p>
 <p>2.组件和容器<br>组件:符合规范,具有部分功能,且需要部署到相应的容器里面才能运行的软件模块,servlet就是一个组件<br>容器:符合规范,为组件提供运行环境的程序.<br>servlet容器为servlet提供了相应的运行环境(即网络相关的服务),Tomcat是一个符合servlet规范的容器</p>
 <p>3.http协议:一种网络应用层协议规定浏览器如何与web服务器之间进行通信及响应的数据包的结构<br>TCP/IP:传输层和网络层协议,将数据包可靠地传递(用socket传递接收数据包会丢包,所以需要一些协议进行进一步解析传递)</p>
 <p>4.浏览器与web服务器之间如何通信?<br>建立连接,发送请求,发送响应,关闭连接,若浏览器要再次发送请求,需要重写建立新的连接,及”一次请求,一次连接”.<br>优点:web服务器可以利用有限的连接为尽可能多的请求服务</p>
 <p>5.数据包的结构<br>请求数据包:<br>a.请求行(请求方式,请求资源路径,协议版本)<br>b.若干消息头(是一个键值对,使用:隔开),浏览器与web服务器,可以通过发送一些消息头来传递一些特定消息,如浏览器可以发送”user-agent”,消息头告诉服务器,浏览器的类型和版本.<br>c.实体内容(消息正文):只有当请求方式为post时,实体内容才会有数据<br>响应数据包:<br>a.状态行(协议版本,状态代码,状态描述),状态码是一个三位数字,描述服务器请求的一个状态.<br>b.响应头,发送一些响应头,如”Content-Type”告诉浏览器,服务器返回的数据类型和编码.<br>c.实体内容,程序的处理结果,浏览器解析出来,生成相应的页面</p>
 <p>6.两种请求方式 ajax技术<br>get请求<br>发get请求情况:在浏览器输入某个地址 点击链接 表单默认的提交方式<br>特点:将请求参数显示在浏览器地址栏,不安全(一些网络设备会记录请求地址)会将请求参数添加到请求行(请求行只能存放2k左右数据),只能提交少量数据<br>post请求<br>发post请求情况:将表单的method属性设置为post<br>特点:不会将请求参数显示在浏览器地址栏,相对安全(http协议对数据包并不会加密处理,所以需要用http的加密),会将请求参数添加到实体内容里面,可以提交大量数据.</p>
 <p>7.重定向<br>服务器通知浏览器向某个地址发送请求(服务器可以通过302状态和location消息头,该消息头的值是一个地址,为重定向地址),浏览器收到后,会立即向重定向地址发送请求.<br>如何重定向:response.sendRedirect(String url) url是重定向地址<br>特点:重定向地址是任意的,重定向之后浏览器地址栏的地址会发生变化</p>
-<h4 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h4><p>sun公司制定的一种服务器端的动态页面技术规范,(因为使用servlet虽然也可以生成动态页面,但由于反射,需要使用大量out.println语句,并且不利于页面的维护,若要修改页面,需要修改servlet代码,所以制定了jsp)<br>jsp是以.jsp为后缀的文件,该文件主要由html和少量的java代码组成,容器会将这个文件自动转成servlet然后执行,本质是一个servlet.</p>
+<h3 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h3><p>sun公司制定的一种服务器端的动态页面技术规范,(因为使用servlet虽然也可以生成动态页面,但由于反射,需要使用大量out.println语句,并且不利于页面的维护,若要修改页面,需要修改servlet代码,所以制定了jsp)<br>jsp是以.jsp为后缀的文件,该文件主要由html和少量的java代码组成,容器会将这个文件自动转成servlet然后执行,本质是一个servlet.</p>
 <p>1.写jsp的步骤<br>(1)写.jsp为后缀的文件<br>(2)在这个文件中,可以使用如下元素:<br>html(css,js)直接写即可,java代码片段&lt;%java代码%&gt;,jsp表达式&lt;%=java表达式%&gt;<br>隐含对象:可以直接使用的对象,如out,request,response,application,session,exception,pageContext,page(jsp实例本身),config<br>因容器在生成对应的servlet源代码时,会自动添加获得这些对象的代码.<br>指令:告诉容器将jsp转成一个servlet时,额外做一些从处理,如导包<br>语法:&lt;%@指令名 属性=值%&gt;<br>page指令:import属性用于指定要导入的包名<br>&lt;%@page import=”java.util.<em> , java.text.</em> “%&gt;<br>a.contentType属性:用于设置response.setContentType方法的内容<br>b.pageEncoding属性:用来告诉容器在读取jsp文件的内容时使用指定字符集来解码<br>c.session属性:缺省值是true,若值是false,则容器不再添加获得session对象的代码,即   不能使用session隐含对象.<br>d.errorPage属性:用来指定一个异常处理页面,当jsp运行发送异常,则容器会调用异常页   面处理<br>f.isErrorPage属性:缺省值是false,若值是true,就可以使用exception隐含对象         (exception对象用于获得异常的一个简短的描述)</p>
 <p>2.include指令<br>file属性:用于指定被包含的文件名.(容器会将file属性指定的文件的内容插入到该指令所在的位置,被包含的jsp并不会真正执行,没有对应的servlet)</p>
 <p>3.jsp执行过程<br>(1)容器将jsp转换成一个servlet(html–&gt;service方法里面使用out.weite输出)<br>注:out.println将null直接输出,out.write方法会将null转换成””输出</p>
@@ -274,7 +274,7 @@
 &lt;%= %&gt; --&gt; service方法中,使用out.print方法输出
 &lt;%! %&gt; --&gt; 给servlet增加了新的属性或方法  
 </code></pre><p>(2)容器再调用该servlet,容器会将该servlet先编译,然后实例化,初始化,调用,销毁.</p>
-<h4 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h4><p>一个web组件将未完成的处理交给另外一个web组件继续做.<br>web组件是servlet和jsp的总称,通常是一个servlet获得数据之后转交给另外一个jsp来展现.</p>
+<h3 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h3><p>一个web组件将未完成的处理交给另外一个web组件继续做.<br>web组件是servlet和jsp的总称,通常是一个servlet获得数据之后转交给另外一个jsp来展现.</p>
 <p>1.转发过程<br>(1)将数据绑定到request对象上</p>
 <pre><code>request.setAttribute(String name,Object obj);   name:绑定名  obj:绑定值
 `
@@ -282,13 +282,13 @@
 <p>依据绑定名获得绑定值,若绑定值不在,返回null<br>request.getAttribute(String name);</p>
 <p>2.特点<br>转发之后,浏览器的地址栏的地址是不变的;<br>转发的目的地有限制,要求属于同一个web应用.</p>
 <p>3.比较转发和重定向<br>(1)转发可以共享request,重定向不行(容器收到请求之后,会立即创建request和response对象,一旦响应发送完毕,会立即销毁这两个对象,也就是说request和response对象的生成时间是一次请求和响应期间存在;转发是一次请求,重定向是二次请求)<br>(2)转发的浏览器地址栏的地址没有变化,重定向有变化<br>(3)转发的目的地有限制(要求同一个应用),重定向没有任何限制</p>
-<h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><p>1.状态管理<br>将浏览器与web服务器之间多次交互当做一个整体来处理,并且将多次交互所涉及的数据(即状态)保存下来.</p>
+<h3 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h3><p>1.状态管理<br>将浏览器与web服务器之间多次交互当做一个整体来处理,并且将多次交互所涉及的数据(即状态)保存下来.</p>
 <p>2.如何进行状态管理<br>(1)将状态保存在浏览器端(cookie)<br>(2)将状态保存在服务器端(session会话)</p>
 <p>2.cookie<br>cookie:服务器临时存放在浏览器端的少量数据,用于跟踪用户状态.<br>cookie工作原理:当浏览器访问服务器时,服务器将少量数据以set-cookie消息头的形式发给浏览器,浏览器会保存下来;当浏览器再次访问服务器时,会将之前保存的这些数据以cookie消息头的形式发送给服务器.</p>
 <p>3.如何添加cookie<br>Cookie c = new Cookie(String name,String value);<br>response.addCookie(c);<br>name–cookie的名称 value–cookie的值</p>
 <p>4.如何读取cookie<br>Cookie[] request.getCookies();<br>该方法有可能返回null<br>String cookie.getName();<br>String cookie.getValue();</p>
 <p>5.生存时间问题<br>(1)默认情况下,浏览器会将cookie保存在内存里面,浏览器如果关闭,则cookie会被删除.<br>(2)可以调用setMaxAge方法来设置cookie的生存时间.<br>  cookie.setMaxAge(int seconds); 单位是秒<br>  seconds &gt; 0:浏览器会将cookie保存在硬盘上(一般是文件的形式),超过指定的时                  间,cookie会被删除.<br>  seconds &lt; 0:默认情况(即保存到内存里面)<br>  seconds = 0:删除cookie<br>  如,要删除一个名称为username的cookie<br>  Cookie c = new Cookie(“username”,””);<br>  c.setMaxAge(0);<br>  response.addCookie(c);//同名的cookie会被覆盖达到修改的目的</p>
-<h4 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h4><p>生命周期:Servlet容器如何创建servlet实例,如何对其进行初始化操作,如何调用其方法来处理请求,以及如何销毁其实例的整个过程,也可以说即容器时如何管理servlet.</p>
+<h3 id="servlet的生命周期"><a href="#servlet的生命周期" class="headerlink" title="servlet的生命周期"></a>servlet的生命周期</h3><p>生命周期:Servlet容器如何创建servlet实例,如何对其进行初始化操作,如何调用其方法来处理请求,以及如何销毁其实例的整个过程,也可以说即容器时如何管理servlet.</p>
 <p>生命周期分成哪几个阶段<br>1.实例化:容器调用servlet的构造器,创建servlet实例<br>  实例化时间:默认情况下,容器只有收到请求后,才会创建servlet实例(容器只会创建一个servlet实例)<br>  在添加适当配置后,可以让容器启动后,立即创建servlet.</p>
 <pre class="line-numbers language-java"><code class="language-java">  <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置启动加载   参数值是一个大于等于零的整数<span class="token punctuation">,</span>值越小越优先被创建<span class="token operator">--</span><span class="token operator">></span>
   <span class="token operator">&lt;</span>load<span class="token operator">-</span>on<span class="token operator">-</span>startup<span class="token operator">></span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>load<span class="token operator">-</span>on<span class="token operator">-</span>startup<span class="token operator">></span>
@@ -303,6 +303,34 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>3.就绪(调用)<br>容器在收到请求之后,会调用servlet实例的service方法处理请求.<br>HttpServlet已经提供了service方法的实现.<br>该方法实现:依据请求类型调用对应的doXXX方法,如get请求调用doGet方法,post请求调用doPost方法.doXXX方法只是简单的抛出一个异常.<br>在开发servlet时,有两个选择,一是直接重写Httpservlet的service方法,或者重写HttpServlet的doGet和doPost方法.</p>
 <p>4.销毁<br>容器在删除servlet实例之前,会调用该实例的destory方法.(该方法只会执行一次)<br>该方法的实现为空(什么都没有做),开发人员可以override的destory方法来扩展.</p>
+<h3 id="容器如何处理请求资源路径"><a href="#容器如何处理请求资源路径" class="headerlink" title="容器如何处理请求资源路径"></a>容器如何处理请求资源路径</h3><p>如,在浏览器地址栏输入<a href="http://ip:port/appname/abc.html,容器如何处理" target="_blank" rel="noopener">http://ip:port/appname/abc.html,容器如何处理</a><br>1.容器默认会认为访问的是一个servlet,所以容器会查看web.xml中有没有匹配的servlet.</p>
+<p>有三种匹配方式:<br>精确匹配:url-pattern的值必须等于请求路径,如对于上述请求,值必须是”abc.html”<br>通配符匹配:使用”*”匹配任意零个或者多个字符,</p>
+<pre class="line-numbers language-java"><code class="language-java">        如<span class="token operator">&lt;</span>url<span class="token operator">-</span>pattern<span class="token operator">></span><span class="token operator">/</span><span class="token operator">*</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">-</span>pattern<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>后缀匹配:使用”*.”开头,后接一个后缀,用来匹配所有以该后缀结尾的请求.</p>
+<pre class="line-numbers language-java"><code class="language-java">         如<span class="token operator">:</span> <span class="token operator">&lt;</span>url<span class="token operator">-</span>pattern<span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token keyword">do</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">-</span>pattern<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.若没有匹配的servlet,则容器会查找对应的文件.</p>
+<p>如何让一个servlet处理多种请求<br>1.使用后缀匹配,</p>
+<pre class="line-numbers language-java"><code class="language-java">    比如<span class="token operator">&lt;</span>url<span class="token operator">-</span>pattern<span class="token operator">></span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token keyword">do</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">-</span>pattern<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.分析请求资源路径,进行不同的处理</p>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>servlet规范当中定义的一种特殊的组件,用于拦截servlet容器的调用过程.(容器收到请求过后,会先调用过滤器,再调用servlet)</p>
+<p>1.如何写一个过滤器<br>(1)写一个java类,实现Filter接口<br>(2)在接口方法当中,实现拦截处理逻辑<br>(3)配置过滤器(web.xml)</p>
+<p>2.过滤器的优先级<br>当多个过滤器都满足拦截要求,过滤器先执行前面的过滤器</p>
+<p>3.初始化参数</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>配置初始化参数
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 配置初始化参数 <span class="token operator">--</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>init<span class="token operator">-</span>param<span class="token operator">></span>
+          <span class="token operator">&lt;</span>param<span class="token operator">-</span>name<span class="token operator">></span>illegal<span class="token operator">&lt;</span><span class="token operator">/</span>param<span class="token operator">-</span>name<span class="token operator">></span>
+          <span class="token operator">&lt;</span>param<span class="token operator">-</span>value<span class="token operator">></span>狗<span class="token operator">&lt;</span><span class="token operator">/</span>param<span class="token operator">-</span>value<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>init<span class="token operator">-</span>param<span class="token operator">></span>
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>使用FilterConfig对象提供的方法来读取
+    <span class="token comment" spellcheck="true">//读取初始化参数</span>
+    String illegal <span class="token operator">=</span> config<span class="token punctuation">.</span><span class="token function">getInitParameter</span><span class="token punctuation">(</span><span class="token string">"illegal"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4.过滤器的优点<br>(1)在不修改原有代码的基础上,添加一些简单的功能<br>(2)将多个组件相同的功能集中写在一个类里面(即过滤器里面),方便代码的维护</p>
+<h4 id="request-session-servlet上下文都可以绑定数据-有什么区别"><a href="#request-session-servlet上下文都可以绑定数据-有什么区别" class="headerlink" title="request,session,servlet上下文都可以绑定数据,有什么区别?"></a>request,session,servlet上下文都可以绑定数据,有什么区别?</h4><p>1.绑定的数据生存时间不一样,按照生存时间的长短来排序,依次是 request&lt;session&lt;servlet上下文,在满足使用条件的情况下,优先使用声明周期短的.<br>2.绑定到session对象上的数据,只有与之对应的用户能够看到;绑定到上下文上的数据,所   有用户都可以访问.</p>
 
       
       
@@ -361,7 +389,7 @@
         <p><span>本文标题:</span><a href="/2019/10/12/Sevlet/">Sevlet知识</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
         <p><span>发布时间:</span>2019年10月12日 - 15时24分</p>
-        <p><span>最后更新:</span>2019年10月16日 - 17时38分</p>
+        <p><span>最后更新:</span>2019年10月17日 - 13时50分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/10/12/Sevlet/" title="Sevlet知识">http://yoursite.com/2019/10/12/Sevlet/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/10/12/Sevlet/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -390,7 +418,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet具体的运行过程"><span class="toc-number">1.</span> <span class="toc-text">servlet具体的运行过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet"><span class="toc-number">2.</span> <span class="toc-text">servlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSP"><span class="toc-number">3.</span> <span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#转发"><span class="toc-number">4.</span> <span class="toc-text">转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#状态管理"><span class="toc-number">5.</span> <span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#servlet的生命周期"><span class="toc-number">6.</span> <span class="toc-text">servlet的生命周期</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet具体的运行过程"><span class="toc-number">1.</span> <span class="toc-text">servlet具体的运行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet"><span class="toc-number">2.</span> <span class="toc-text">servlet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSP"><span class="toc-number">3.</span> <span class="toc-text">JSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转发"><span class="toc-number">4.</span> <span class="toc-text">转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态管理"><span class="toc-number">5.</span> <span class="toc-text">状态管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#servlet的生命周期"><span class="toc-number">6.</span> <span class="toc-text">servlet的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#容器如何处理请求资源路径"><span class="toc-number">7.</span> <span class="toc-text">容器如何处理请求资源路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器"><span class="toc-number">8.</span> <span class="toc-text">过滤器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#request-session-servlet上下文都可以绑定数据-有什么区别"><span class="toc-number">8.1.</span> <span class="toc-text">request,session,servlet上下文都可以绑定数据,有什么区别?</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 

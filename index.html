@@ -242,7 +242,7 @@
       
           
               <p><excerpt in index | 首页摘要></excerpt></p>
-<h4 id="servlet具体的运行过程"><a href="#servlet具体的运行过程" class="headerlink" title="servlet具体的运行过程"></a>servlet具体的运行过程</h4><p>浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过service()方法,再通过request对象获取数据,写入数据到response对象中(HTTPResponse中响应状态行,响应头,响应正文,状态行设置状态代码,响应头同Httpcontext中的SAXreader解析对应介质类型映射,发送响应正文),发送响应给浏览器,浏览器解析响应数据包,显示页面.<br>
+<h3 id="servlet具体的运行过程"><a href="#servlet具体的运行过程" class="headerlink" title="servlet具体的运行过程"></a>servlet具体的运行过程</h3><p>浏览器输入地址,与Tomcat建立连接,发送请求,Tomcat中的HTTPRequest解析请求(解析请求行(包括请求方式,请求路径,协议版本),消息头,消息正文,根据路径url部分找到web.xml,反射机制解析servlet请求业务,请求方式有get和post请求,get方式能在消息头解析到,post需要在消息正文中解析),创建servlet业务,通过service()方法,再通过request对象获取数据,写入数据到response对象中(HTTPResponse中响应状态行,响应头,响应正文,状态行设置状态代码,响应头同Httpcontext中的SAXreader解析对应介质类型映射,发送响应正文),发送响应给浏览器,浏览器解析响应数据包,显示页面.<br>
           
       
       
