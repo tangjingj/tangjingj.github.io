@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-31T02:40:50.961Z</updated>
+  <updated>2019-10-31T05:46:38.273Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajax知识</title>
+    <link href="http://yoursite.com/2019/10/31/Ajax/"/>
+    <id>http://yoursite.com/2019/10/31/Ajax/</id>
+    <published>2019-10-31T02:45:17.473Z</published>
+    <updated>2019-10-31T05:46:38.273Z</updated>
+    
+    <content type="html"><![CDATA[<p><excerpt in index | 首页摘要></excerpt></p><h3 id="什么是ajax？ajax作用是什么？"><a href="#什么是ajax？ajax作用是什么？" class="headerlink" title="什么是ajax？ajax作用是什么？"></a>什么是ajax？ajax作用是什么？</h3><p>AJAX是在JavaScript中用于提交异步请求并处理响应结果的做法,使用了AJAX后，发出请求、处理响应结果的整个过程，可以对当前页面的显示完全不产生影响。<br>“局部刷新”是AJAX应用的其中一种表现效果。<br><a id="more"></a></p><the rest of contents | 余下全文><h3 id="ajax常用的几个参数吗-？"><a href="#ajax常用的几个参数吗-？" class="headerlink" title="ajax常用的几个参数吗 ？"></a>ajax常用的几个参数吗 ？</h3><p>url:  发送请求的地址<br>type: 请求方式（post或get）默认为get<br>data：要求为Object或String类型的参数，发送到服务器的数据<br>dataType: 预期服务器返回的数据类型<br>success或error：请求成功后调用的回调函数，有两个参数<br>async: 同步异步请求，默认true所有请求均为异步请求。</p><h3 id="原生js-ajax请求的几个步骤-实现原理"><a href="#原生js-ajax请求的几个步骤-实现原理" class="headerlink" title="原生js ajax请求的几个步骤(实现原理)?"></a>原生js ajax请求的几个步骤(实现原理)?</h3><p>1.创建XMLHttpRequest的对象<br>2.调用open方法<br>3.设置回调函数<br>4.发送数据<br>5.接受服务器响应数据<br>若是post请求则在发送数据前,设置set-contentType</p><h3 id="什么情况造成跨域？"><a href="#什么情况造成跨域？" class="headerlink" title="什么情况造成跨域？"></a>什么情况造成跨域？</h3><p>同源策略限制 不同源会造成跨域。</p><h3 id="跨域解决方案有哪些"><a href="#跨域解决方案有哪些" class="headerlink" title="跨域解决方案有哪些?"></a>跨域解决方案有哪些?</h3><p>1.jsonp 只能解决get跨域</p><ul><li>去创建一个script标签</li><li>script的src属性设置接口地址</li><li>接口参数,必须要带一个自定义函数名 要不然后台无法返回数据。</li><li>通过定义函数名去接收后台返回数据</li></ul><p>2.CORS：跨域资源共享<br>需要后台设置<br>Access-Control-Allow-Origin: *              //允许所有域名访问，或者<br>Access-Control-Allow-Origin: <a href="http://a.com" target="_blank" rel="noopener">http://a.com</a>   //只允许所有域名访问</p><p>3.设置 document.domain<br>相同主域名不同子域名下的页面，可以设置document.domain让它们同域</p><p>4.用Apache做转发（逆向代理），让跨域变成同域</p><h3 id="Ajax的同步和异步"><a href="#Ajax的同步和异步" class="headerlink" title="Ajax的同步和异步"></a>Ajax的同步和异步</h3><p>同步请求:<br>客户端请求(等待)-&gt;服务端处理-&gt;响应-&gt;页面载入<br>（缺少对象:XMLhttpRequest）<br>这时候如果有错误，只能再次发送请求，再次等待<br>异步请求：<br>比如当你填写邮箱地址的时候，页面当时就把邮箱地址发送到了服务器（也就是页面发送了一个请求），服务器做处理和响应，得到你的邮箱地址填写重复了，把响应结果发给页面，在这个过程中你仍然可以填写其他内容，这时候服务器会提示你有重复的邮箱地址，在页面上的表现只是邮箱地址旁别加了一行字或者把整个文本框标红，并没有重新刷你的页面，所有的填写错误会实时的显示出来，你也会实时的更正。这个过程中，你会有整个页面的刷新，也不会有整个页面的提交和等待，最后提交，一切都会搞定的<br>总结：页面上的操作和服务器端的操作互相之间不会造成阻塞</p></the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index | 首页摘要&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h3 id=&quot;什么是ajax？ajax作用是什么？&quot;&gt;&lt;a href=&quot;#什么是ajax？ajax作用是什么？&quot; class=&quot;headerlink&quot; title=&quot;什么是ajax？ajax作用是什么？&quot;&gt;&lt;/a&gt;什么是ajax？ajax作用是什么？&lt;/h3&gt;&lt;p&gt;AJAX是在JavaScript中用于提交异步请求并处理响应结果的做法,使用了AJAX后，发出请求、处理响应结果的整个过程，可以对当前页面的显示完全不产生影响。&lt;br&gt;“局部刷新”是AJAX应用的其中一种表现效果。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>实现线程的三种方式</title>
@@ -578,27 +603,6 @@
       <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
     
       <category term="简介" scheme="http://yoursite.com/tags/%E7%AE%80%E4%BB%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2019/09/04/hello-world/"/>
-    <id>http://yoursite.com/2019/09/04/hello-world/</id>
-    <published>2019-09-04T07:19:52.505Z</published>
-    <updated>2018-10-09T14:17:46.790Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
     
   </entry>
   
