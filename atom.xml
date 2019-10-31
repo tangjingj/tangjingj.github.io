@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-21T03:18:51.866Z</updated>
+  <updated>2019-10-31T02:40:50.961Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现线程的三种方式</title>
+    <link href="http://yoursite.com/2019/10/31/%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://yoursite.com/2019/10/31/线程/</id>
+    <published>2019-10-31T02:21:06.306Z</published>
+    <updated>2019-10-31T02:40:50.961Z</updated>
+    
+    <content type="html"><![CDATA[<p><excerpt in index | 首页摘要></excerpt></p><h3 id="实现线程的三种方式"><a href="#实现线程的三种方式" class="headerlink" title="实现线程的三种方式"></a>实现线程的三种方式</h3><ul><li>继承Thread类</li><li>实现Runnable接口</li><li>实现Callable接口</li></ul><a id="more"></a><the rest of contents | 余下全文><pre class="line-numbers language-Java"><code class="language-Java">package thread;import java.util.concurrent.Callable;import java.util.concurrent.ExecutionException;import java.util.concurrent.FutureTask;/** * 线程测试 * @author sunlh * */public class ThreadTest {    public static void main(String[] args) {        // 通过实现Runnable接口实现多线程        ThreadTest.implRunnable();        // 通过继承Thread类实现多线程        ThreadTest.extThread();        // 通过实现Callable接口来实现多线程        ThreadTest.callableThread();    }    /**     * 通过实现Runnable接口来实现线程     */    public static void implRunnable() {        Thread thread = new Thread(new RunnableImpl(), "实现Runnable的线程");        thread.start();    }    /**     * 通过继承Thread类来实现线程     */    public static void extThread() {        MyThread thread = new MyThread();        thread.setName("继承Thread的线程");        thread.start();    }    /**     * 通过实现Future来实现有返回值的线程     */    public static void callableThread() {        FutureTask<String> task = new FutureTask<>(new CallableImpl());        Thread thread = new Thread(task);        thread.setName("具有返回值的Callable线程");        thread.start();        try {            String result;            result = task.get();            System.out.println(result);        } catch (InterruptedException | ExecutionException e) {            e.printStackTrace();        }    }}class CallableImpl implements Callable<String> {    @Override    public String call() throws Exception {        System.out.println(Thread.currentThread().getName());        return "我是Callable线程的返回值";    }}class MyThread extends Thread {    @Override    public void run() {        System.out.println(Thread.currentThread().getName());    }}class RunnableImpl implements Runnable {    @Override    public void run() {        System.out.println(Thread.currentThread().getName());    }}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in index | 首页摘要&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h3 id=&quot;实现线程的三种方式&quot;&gt;&lt;a href=&quot;#实现线程的三种方式&quot; class=&quot;headerlink&quot; title=&quot;实现线程的三种方式&quot;&gt;&lt;/a&gt;实现线程的三种方式&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;继承Thread类&lt;/li&gt;
+&lt;li&gt;实现Runnable接口&lt;/li&gt;
+&lt;li&gt;实现Callable接口&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="知识" scheme="http://yoursite.com/tags/%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>Http和Https</title>
@@ -501,15 +532,15 @@
     <link href="http://yoursite.com/2019/09/04/Java%E5%B8%B8%E8%A7%81%E9%A2%98%E7%9B%AE/"/>
     <id>http://yoursite.com/2019/09/04/Java常见题目/</id>
     <published>2019-09-04T07:19:52.511Z</published>
-    <updated>2019-05-20T06:28:46.686Z</updated>
+    <updated>2019-10-30T01:08:22.101Z</updated>
     
-    <content type="html"><![CDATA[<p><excerpt in index | 首页摘要></excerpt></p><h1 id="Java常见题目"><a href="#Java常见题目" class="headerlink" title="Java常见题目"></a>Java常见题目</h1><p>1.Springmvc请求处理流程<br>浏览器发送请求,DispatcherServlet接收请求,根据请求路径调用handlerMapping(记录请求路径与控制器的对应关系),handlerMapping返回控制器,dispatcher找到对应controller<br>接收请求并给与响应,把modelandview返回给dispatcher,dispatcher根据视图名,找到视图组件,响应浏览器.</p><p>2.Spring IOC、AOP的实现原理<br>IOC：Inversion of control，表示控制反转<br>传统的创建并获取的方式是new构造方法，在使用Spring以后，是类似于getBean()的作法，所以，就由掌握创建并管理对象的主动权，变成了放弃创建并管理对象的主动权，而是只关心如何获取对象，这样的做法就叫做控制反转。<br>AOP是将安全,事务等程序逻辑相对独立的功能抽取出来,利用spring的配置文件将这些功能插入进去,实现了按照方面编程,提高复用性.<br><a id="more"></a></p><the rest of contents | 余下全文><p>3.静态代理,动态代理的区别<br>静态代理:是由程序员创建或由特定工具自动生成源代码,再对其编译,在程序运行前,代理类的.class文件就已经存在.<br>动态代理:在程序运行时,运用反射机制动态创建而成.</p><p>4.post请求和get请求的区别<br>get请求:在地址栏输入地址,表单默认的提交方式,会将请求参数显示在地址栏中,不安全.会将请求参数添加到请求行中,只能发送少量数据(大约是2k)<br>post请求:将表单的提交方式改为post,请求的数据不会显示在地址栏中,相对安全,数据会在实体内容中发送,能够发送大量数据.</p><p>5.sql注入,跨脚本攻击的处理方式<br>处理sql注入:可以将执行sql对象的statement改成prepareStatement预加载sql执行对象<br>处理跨脚本攻击:输入过滤,对每个用户的输入或者请求首部都要进行过滤,且需要覆盖到所有的输入源.输出过滤,安装防护墙,可以拦截css攻击.</p><p>6.mybatis参数使用#和$的区别<br>在mybatis原理中,可以看做参数都在一个map中,使用参数是把它从map中取出用?表示.</p><pre class="line-numbers language-bash"><code class="language-bash">  *<span class="token comment" spellcheck="true">#{}可以参考ONGL表达式,${}是sql语句中用来替代某个组成部分,由于sql语法的限制,</span>  无法进行预编译,存在sql注入的风险.需要预编译且替换某个值时用<span class="token comment" spellcheck="true">#{},</span>  若是占位某个语法的组成部分,则使用$<span class="token punctuation">{</span><span class="token punctuation">}</span>.*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>7.springmvc过滤器<br>拦截器是SpringMVC框架中的组件，而过滤器是JavaEE中的组件。<br>拦截器的配置在Spring的配置文件中，更加灵活，可以有多个黑名单，也可以有多个白名单，而过滤器的配置在web.xml中，只有1项黑名单。<br>拦截器是执行在各控制器之前与之后的，而过滤器是执行在所有Servlet之前的</p><p>8.url、uri的区别<br>uri统一资源标识符,用来唯一的标识一个资源,web上可用的每种资源如html文档,图片,视频等都是uri来定位的。uri一般由三部组成,访问资源的命名机制、存放资源的主机名、资源自身的名称，由路径表示，着重强调资源。<br>url统一资源定位符，是Internet上用来描述资源的字符串，主要用在各种www客户端和服务器程序上。采用url可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录。<br>uri是url更高层次的抽象，uri属于父类，而url属于uri的子类。</p><p>9.servlet、jsp的区别<br>servlet是一种扩展web服务器功能的组件规范，因web服务器只能处理静态资源的请求，即需要事先将html文档准备好，放到web服务器上，不能处理动态资源请求，所以需要servlet的扩展。<br>jsp是sun公司制定的一种动态页面技术规范，是以.jsp为后缀的文件，主要由html标签和少量java代码组成，容器会将jsp转成servlet运行，jsp可以包含html（js，css），java代码片段，隐含对象，指令</p><p>10.转发和重定向的区别<br>转发：forward是服务器请求资源,服务器之间访问目标地址的url,把url的响应内容读取过来,然后这些内容再发送给浏览器,浏览器根本不知道服务器发送的内容从哪来,地址栏地址不变.<br>重定向:服务器通知浏览器向某个地址发请求.服务器可以向浏览器发送302状态码和location消息头,该消息头存着重定向的地址,浏览器收到后会向重定向地址发送请求.</p><p>12.线程创建的方式，多线程的使用，线程池,mysql索引类型，组合索引，索引失效</p><p>线程的创建方式有两种:一.继承extends thread  二.实现runnable接口</p><p>多线程的使用:线程是进程的子集,一个进程可以有一个或多个线程,同类的多个线程共享一块内存空间.通常用于一个程序中需要完成多个任务,虽然可以单一线程完成,但多线程速度会更快,如下载.多线程是并发运行的.</p><p>线程池:线程池主要由两个作用,控制线程数量和重用线程,即需要创建多个线程或线程频繁使用和销毁时创建线程池.</p><p>mysql索引类型<br>聚集索引:通过主键创建的索引为聚集索引,一个表只能有一个聚集索引,添加主键约束的表会自动创建聚集索引,它的树状结构保存了数据.<br>非聚集索引:非主键创建的索引,一个表可以有多个,树状结构保存了指针.</p><p>组合索引:通过多个字段创建的索引,频繁使用某几个字段作为查询条件的时候,可以为这几个字段创建组合索引.</p><p>索引失效:索引无法存储null值  不适合键值较少的列  前导模糊查询不能利用索引</p><p>13.in、exsits的区别，左连接、右连接，重载和重写的区别</p><p>in和exsits的区别:in可以和子查询一起使用,也可以直接使用,in与子查询一起使用时是针对主查询使用索引,in是把外表和内表作hash连接.exsits一般是与子查询一起使用,会针对子查询的表使用索引,exsits是对外表作loop循环.</p><p>左连接和右连接<br>左连接是以jion左边的表为主表,查询所有数据,右边的表只显示有关系的数据,jion前面加left<br>右连接是以jion右边的表为主表,查询所有数据,左边的表只显示有关系的数据,jion前面加right</p><p>重载和重写<br>重载:发生在同一个类中,方法名相同,参数列表不同,方法体不同,重载看参数,发生在编译期<br>重写:发生在父子类中,方法名相同,参数列表相同,方法体不同,重写看对象,发生在运行期</p></the>]]></content>
+    <content type="html"><![CDATA[<p><excerpt in index | 首页摘要></excerpt></p><h1 id="Java常见题目"><a href="#Java常见题目" class="headerlink" title="Java常见题目"></a>Java常见题目</h1><h3 id="Springmvc请求处理流程"><a href="#Springmvc请求处理流程" class="headerlink" title="Springmvc请求处理流程"></a>Springmvc请求处理流程</h3><p>浏览器发送请求,DispatcherServlet接收请求,根据请求路径调用handlerMapping(记录请求路径与控制器的对应关系),handlerMapping返回控制器,dispatcher找到对应controller<br>接收请求并给与响应,把modelandview返回给dispatcher,dispatcher根据视图名,找到视图组件,响应浏览器.</p><h3 id="Spring-IOC、AOP的实现原理"><a href="#Spring-IOC、AOP的实现原理" class="headerlink" title="Spring IOC、AOP的实现原理"></a>Spring IOC、AOP的实现原理</h3><p>IOC：Inversion of control，表示控制反转<br>传统的创建并获取的方式是new构造方法，在使用Spring以后，是类似于getBean()的作法，所以，就由掌握创建并管理对象的主动权，变成了放弃创建并管理对象的主动权，而是只关心如何获取对象，这样的做法就叫做控制反转。<br>AOP是将安全,事务等程序逻辑相对独立的功能抽取出来,利用spring的配置文件将这些功能插入进去,实现了按照方面编程,提高复用性.<br><a id="more"></a></p><the rest of contents | 余下全文><h3 id="静态代理-动态代理的区别"><a href="#静态代理-动态代理的区别" class="headerlink" title="静态代理,动态代理的区别"></a>静态代理,动态代理的区别</h3><p>静态代理:是由程序员创建或由特定工具自动生成源代码,再对其编译,在程序运行前,代理类的.class文件就已经存在.<br>动态代理:在程序运行时,运用反射机制动态创建而成.</p><h3 id="post请求和get请求的区别"><a href="#post请求和get请求的区别" class="headerlink" title="post请求和get请求的区别"></a>post请求和get请求的区别</h3><p>get请求:在地址栏输入地址,表单默认的提交方式,会将请求参数显示在地址栏中,不安全.会将请求参数添加到请求行中,只能发送少量数据(大约是2k)<br>post请求:将表单的提交方式改为post,请求的数据不会显示在地址栏中,相对安全,数据会在实体内容中发送,能够发送大量数据.</p><h3 id="sql注入-跨脚本攻击的处理方式"><a href="#sql注入-跨脚本攻击的处理方式" class="headerlink" title="sql注入,跨脚本攻击的处理方式"></a>sql注入,跨脚本攻击的处理方式</h3><p>处理sql注入:可以将执行sql对象的statement改成prepareStatement预加载sql执行对象<br>处理跨脚本攻击:输入过滤,对每个用户的输入或者请求首部都要进行过滤,且需要覆盖到所有的输入源.输出过滤,安装防护墙,可以拦截css攻击.</p><h3 id="mybatis参数使用-和-的区别"><a href="#mybatis参数使用-和-的区别" class="headerlink" title="mybatis参数使用#和$的区别"></a>mybatis参数使用#和$的区别</h3><p>在mybatis原理中,可以看做参数都在一个map中,使用参数是把它从map中取出用?表示.</p><pre class="line-numbers language-bash"><code class="language-bash">  *<span class="token comment" spellcheck="true">#{}可以参考ONGL表达式,${}是sql语句中用来替代某个组成部分,由于sql语法的限制,</span>  无法进行预编译,存在sql注入的风险.需要预编译且替换某个值时用<span class="token comment" spellcheck="true">#{},</span>  若是占位某个语法的组成部分,则使用$<span class="token punctuation">{</span><span class="token punctuation">}</span>.*<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="springmvc过滤器"><a href="#springmvc过滤器" class="headerlink" title="springmvc过滤器"></a>springmvc过滤器</h3><p>拦截器是SpringMVC框架中的组件，而过滤器是JavaEE中的组件。<br>拦截器的配置在Spring的配置文件中，更加灵活，可以有多个黑名单，也可以有多个白名单，而过滤器的配置在web.xml中，只有1项黑名单。<br>拦截器是执行在各控制器之前与之后的，而过滤器是执行在所有Servlet之前的</p><h3 id="url、uri的区别"><a href="#url、uri的区别" class="headerlink" title="url、uri的区别"></a>url、uri的区别</h3><p>uri统一资源标识符,用来唯一的标识一个资源,web上可用的每种资源如html文档,图片,视频等都是uri来定位的。uri一般由三部组成,访问资源的命名机制、存放资源的主机名、资源自身的名称，由路径表示，着重强调资源。<br>url统一资源定位符，是Internet上用来描述资源的字符串，主要用在各种www客户端和服务器程序上。采用url可以用一种统一的格式来描述各种信息资源，包括文件、服务器的地址和目录。<br>uri是url更高层次的抽象，uri属于父类，而url属于uri的子类。</p><h3 id="servlet、jsp的区别"><a href="#servlet、jsp的区别" class="headerlink" title="servlet、jsp的区别"></a>servlet、jsp的区别</h3><p>servlet是一种扩展web服务器功能的组件规范，因web服务器只能处理静态资源的请求，即需要事先将html文档准备好，放到web服务器上，不能处理动态资源请求，所以需要servlet的扩展。<br>jsp是sun公司制定的一种动态页面技术规范，是以.jsp为后缀的文件，主要由html标签和少量java代码组成，容器会将jsp转成servlet运行，jsp可以包含html（js，css），java代码片段，隐含对象，指令</p><h3 id="转发和重定向的区别"><a href="#转发和重定向的区别" class="headerlink" title="转发和重定向的区别"></a>转发和重定向的区别</h3><p>转发：forward是服务器请求资源,服务器之间访问目标地址的url,把url的响应内容读取过来,然后这些内容再发送给浏览器,浏览器根本不知道服务器发送的内容从哪来,地址栏地址不变.<br>重定向:服务器通知浏览器向某个地址发请求.服务器可以向浏览器发送302状态码和location消息头,该消息头存着重定向的地址,浏览器收到后会向重定向地址发送请求.</p><h3 id="线程创建的方式，多线程的使用，线程池-mysql索引类型，组合索引，索引失效"><a href="#线程创建的方式，多线程的使用，线程池-mysql索引类型，组合索引，索引失效" class="headerlink" title="线程创建的方式，多线程的使用，线程池,mysql索引类型，组合索引，索引失效"></a>线程创建的方式，多线程的使用，线程池,mysql索引类型，组合索引，索引失效</h3><p>线程的创建方式有两种:一.继承extends thread  二.实现runnable接口</p><p>多线程的使用:线程是进程的子集,一个进程可以有一个或多个线程,同类的多个线程共享一块内存空间.通常用于一个程序中需要完成多个任务,虽然可以单一线程完成,但多线程速度会更快,如下载.多线程是并发运行的.</p><p>线程池:线程池主要由两个作用,控制线程数量和重用线程,即需要创建多个线程或线程频繁使用和销毁时创建线程池.</p><p>mysql索引类型<br>聚集索引:通过主键创建的索引为聚集索引,一个表只能有一个聚集索引,添加主键约束的表会自动创建聚集索引,它的树状结构保存了数据.<br>非聚集索引:非主键创建的索引,一个表可以有多个,树状结构保存了指针.</p><p>组合索引:通过多个字段创建的索引,频繁使用某几个字段作为查询条件的时候,可以为这几个字段创建组合索引.</p><p>索引失效:索引无法存储null值  不适合键值较少的列  前导模糊查询不能利用索引</p><h3 id="in、exsits的区别，左连接、右连接，重载和重写的区别"><a href="#in、exsits的区别，左连接、右连接，重载和重写的区别" class="headerlink" title="in、exsits的区别，左连接、右连接，重载和重写的区别"></a>in、exsits的区别，左连接、右连接，重载和重写的区别</h3><p>in和exsits的区别:in可以和子查询一起使用,也可以直接使用,in与子查询一起使用时是针对主查询使用索引,in是把外表和内表作hash连接.exsits一般是与子查询一起使用,会针对子查询的表使用索引,exsits是对外表作loop循环.</p><p>左连接和右连接<br>左连接是以jion左边的表为主表,查询所有数据,右边的表只显示有关系的数据,jion前面加left<br>右连接是以jion右边的表为主表,查询所有数据,左边的表只显示有关系的数据,jion前面加right</p><p>重载和重写<br>重载:发生在同一个类中,方法名相同,参数列表不同,方法体不同,重载看参数,发生在编译期<br>重写:发生在父子类中,方法名相同,参数列表相同,方法体不同,重写看对象,发生在运行期</p></the>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;excerpt in index | 首页摘要&gt;&lt;/excerpt&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Java常见题目&quot;&gt;&lt;a href=&quot;#Java常见题目&quot; class=&quot;headerlink&quot; title=&quot;Java常见题目&quot;&gt;&lt;/a&gt;Java常见题目&lt;/h1&gt;&lt;p&gt;1.Springmvc请求处理流程&lt;br&gt;浏览器发送请求,DispatcherServlet接收请求,根据请求路径调用handlerMapping(记录请求路径与控制器的对应关系),handlerMapping返回控制器,dispatcher找到对应controller&lt;br&gt;接收请求并给与响应,把modelandview返回给dispatcher,dispatcher根据视图名,找到视图组件,响应浏览器.&lt;/p&gt;
-&lt;p&gt;2.Spring IOC、AOP的实现原理&lt;br&gt;IOC：Inversion of control，表示控制反转&lt;br&gt;传统的创建并获取的方式是new构造方法，在使用Spring以后，是类似于getBean()的作法，所以，就由掌握创建并管理对象的主动权，变成了放弃创建并管理对象的主动权，而是只关心如何获取对象，这样的做法就叫做控制反转。&lt;br&gt;AOP是将安全,事务等程序逻辑相对独立的功能抽取出来,利用spring的配置文件将这些功能插入进去,实现了按照方面编程,提高复用性.&lt;br&gt;
+&lt;h1 id=&quot;Java常见题目&quot;&gt;&lt;a href=&quot;#Java常见题目&quot; class=&quot;headerlink&quot; title=&quot;Java常见题目&quot;&gt;&lt;/a&gt;Java常见题目&lt;/h1&gt;&lt;h3 id=&quot;Springmvc请求处理流程&quot;&gt;&lt;a href=&quot;#Springmvc请求处理流程&quot; class=&quot;headerlink&quot; title=&quot;Springmvc请求处理流程&quot;&gt;&lt;/a&gt;Springmvc请求处理流程&lt;/h3&gt;&lt;p&gt;浏览器发送请求,DispatcherServlet接收请求,根据请求路径调用handlerMapping(记录请求路径与控制器的对应关系),handlerMapping返回控制器,dispatcher找到对应controller&lt;br&gt;接收请求并给与响应,把modelandview返回给dispatcher,dispatcher根据视图名,找到视图组件,响应浏览器.&lt;/p&gt;
+&lt;h3 id=&quot;Spring-IOC、AOP的实现原理&quot;&gt;&lt;a href=&quot;#Spring-IOC、AOP的实现原理&quot; class=&quot;headerlink&quot; title=&quot;Spring IOC、AOP的实现原理&quot;&gt;&lt;/a&gt;Spring IOC、AOP的实现原理&lt;/h3&gt;&lt;p&gt;IOC：Inversion of control，表示控制反转&lt;br&gt;传统的创建并获取的方式是new构造方法，在使用Spring以后，是类似于getBean()的作法，所以，就由掌握创建并管理对象的主动权，变成了放弃创建并管理对象的主动权，而是只关心如何获取对象，这样的做法就叫做控制反转。&lt;br&gt;AOP是将安全,事务等程序逻辑相对独立的功能抽取出来,利用spring的配置文件将这些功能插入进去,实现了按照方面编程,提高复用性.&lt;br&gt;
     
     </summary>
     
@@ -568,31 +599,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Git和SVN的区别</title>
-    <link href="http://yoursite.com/2019/09/04/git%E5%92%8Csvn/"/>
-    <id>http://yoursite.com/2019/09/04/git和svn/</id>
-    <published>2019-09-04T07:19:52.503Z</published>
-    <updated>2019-05-20T06:27:30.435Z</updated>
-    
-    <content type="html"><![CDATA[<p><excerpt in index | 首页摘要></excerpt></p><h1 id="Git和SVN的区别"><a href="#Git和SVN的区别" class="headerlink" title="Git和SVN的区别"></a>Git和SVN的区别</h1><p>(1)最核心的区别Git是分布式的，而Svn不是分布的。能理解这点，上手会很容易，声明一点Git并不是目前唯一的分布式版本控制系统，还有比如Mercurial等，所以说它们差不许多。话说回来Git跟Svn一样有自己的集中式版本库和Server端，但Git更倾向于分布式开发，因为每一个开发人员的电脑上都有一个Local Repository,所以即使没有网络也一样可以Commit，查看历史版本记录，创建项 目分支等操作，等网络再次连接上Push到Server端。<br><a id="more"></a></p><the rest of contents | 余下全文><p>从上面看GIt真的很棒，但是GIt adds Complexity,刚开始使用会有些疑惑，因为需要建两个Repositories(Local Repositories &amp; Remote Repositories),指令很多，除此之外你需要<br>知道哪些指令在Local Repository，哪些指令在Remote Repository。</p><p>(2)Git把内容按元数据方式存储，而SVN是按文件：因为,.git目录是处于你的机器上的一个克隆版的版本库，它拥有中心版本库上所有的东西，例如标签，分支，版本记录等。.git目录的体积大小跟.svn比较，你会发现它们差距很大。</p><p>(3)Git没有一个全局版本号，而SVN有：目前为止这是跟SVN相比Git缺少的最大的一个特征。</p><p>(4)Git的内容的完整性要优于SVN: GIT的内容存储使用的是SHA-1哈希算法。这能确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。</p><p>(5)Git下载下来后，在OffLine状态下可以看到所有的Log,SVN不可以。</p><p>(6)SVN必须先Update才能Commit,忘记了合并时就会出现一些错误，git还是比较少的出现这种情况。</p><p>(7)克隆一份全新的目录以同样拥有五个分支来说，SVN是同时复製5个版本的文件,也就是说重复五次同样的动作。而Git只是获取文件的每个版本的 元素，然后只载入主要的分支(master)在我的经验,克隆一个拥有将近一万个提交(commit),五个分支,每个分支有大约1500个文件的 SVN,耗了将近一个小时！而Git只用了区区的1分钟！</p><p>(8)版本库（repository):SVN只能有一个指定中央版本库。当这个中央版本库有问题时，所有工作成员都一起瘫痪直到版本库维修完毕或者新的版本库设立完成。而 Git可以有无限个版本库。或者，更正确的说法，每一个Git都是一个版本库，区别是它们是否拥有活跃目录（Git Working Tree）。如果主要版本库（例如：置於GitHub的版本库）发生了什麼事，工作成员仍然可以在自己的本地版本库（local repository）提交，等待主要版本库恢复即可。工作成员也可以提交到其他的版本库！</p><p>(9)Git的分支名是可以使用不同名字的。例如：我的本地分支名为OK，而在主要版本库的名字其实是master。</p><p>(10))提交（Commit）在SVN，当你提交你的完成品时，它将直接记录到中央版本库。当你发现你的完成品存在严重问题时，你已经无法阻止事情的发生了。如果网路中断，你根本没办法提交！而Git的提交完全属於本地版本库的活动。而你只需“推”（git push）到主要版本库即可。Git的“推”其实是在执行“同步”（Sync）。</p><h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>SVN的特点是简单，只是需要一个放代码的地方时用是OK的。</p><p>Git的特点版本控制可以不依赖网络做任何事情，对分支和合并有更好的支持(当然这是开发者最关心的地方)，不过想各位能更好使用它，需要花点时间尝试下。</p></the>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;excerpt in index | 首页摘要&gt;&lt;/excerpt&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Git和SVN的区别&quot;&gt;&lt;a href=&quot;#Git和SVN的区别&quot; class=&quot;headerlink&quot; title=&quot;Git和SVN的区别&quot;&gt;&lt;/a&gt;Git和SVN的区别&lt;/h1&gt;&lt;p&gt;(1)最核心的区别Git是分布式的，而Svn不是分布的。能理解这点，上手会很容易，声明一点Git并不是目前唯一的分布式版本控制系统，还有比如Mercurial等，所以说它们差不许多。话说回来Git跟Svn一样有自己的集中式版本库和Server端，但Git更倾向于分布式开发，因为每一个开发人员的电脑上都有一个Local Repository,所以即使没有网络也一样可以Commit，查看历史版本记录，创建项 目分支等操作，等网络再次连接上Push到Server端。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-      <category term="idea" scheme="http://yoursite.com/tags/idea/"/>
     
   </entry>
   
