@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/01/10/Java%E5%8F%8D%E5%B0%84%E7%9F%A5%E8%AF%86%E7%82%B9/</loc>
+    
+    <lastmod>2020-01-10T03:58:32.650Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/09/04/%E9%9B%86%E5%90%88/</loc>
+    
+    <lastmod>2020-01-10T03:37:53.502Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/09/04/Spring%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8/</loc>
+    
+    <lastmod>2020-01-10T03:18:55.150Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/11/14/mysql%E6%9F%A5%E8%AF%A2/</loc>
     
-    <lastmod>2019-11-14T03:08:27.482Z</lastmod>
+    <lastmod>2020-01-08T06:09:51.424Z</lastmod>
     
   </url>
   
@@ -75,20 +96,6 @@
     <loc>http://yoursite.com/2019/09/04/spring%20boot(%E4%B8%80)/</loc>
     
     <lastmod>2019-05-27T02:55:05.584Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/09/04/%E9%9B%86%E5%90%88/</loc>
-    
-    <lastmod>2019-05-23T06:35:40.747Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/09/04/Spring%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8/</loc>
-    
-    <lastmod>2019-05-21T07:28:45.626Z</lastmod>
     
   </url>
   

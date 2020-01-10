@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="myBlog">
 <meta property="og:description" content="Mybatis模糊查询MySQL中记录的的常用三种方法 直接使用 % 拼接字符串，如 ‘%’#{name}’%’ 或 “%”#{name}”%”，单引号或双引号都可以。 使用concat（str1,str2）函数拼接 使用mybatis的bind标签">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-14T03:08:27.482Z">
+<meta property="og:updated_time" content="2020-01-08T06:09:51.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis中一些sql语句问题">
 <meta name="twitter:description" content="Mybatis模糊查询MySQL中记录的的常用三种方法 直接使用 % 拼接字符串，如 ‘%’#{name}’%’ 或 “%”#{name}”%”，单引号或双引号都可以。 使用concat（str1,str2）函数拼接 使用mybatis的bind标签">
@@ -142,7 +142,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Http/" style="font-size: 10px;">Http</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网络传输/" style="font-size: 10px;">网络传输</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
+                        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/Http/" style="font-size: 10px;">Http</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Java框架/" style="font-size: 10px;">Java框架</a> <a href="/tags/Java知识/" style="font-size: 10px;">Java知识</a> <a href="/tags/Lombok/" style="font-size: 10px;">Lombok</a> <a href="/tags/MQ/" style="font-size: 10px;">MQ</a> <a href="/tags/MapReduce/" style="font-size: 10px;">MapReduce</a> <a href="/tags/Mybatis/" style="font-size: 10px;">Mybatis</a> <a href="/tags/PHP/" style="font-size: 10px;">PHP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Scheduled注解/" style="font-size: 10px;">Scheduled注解</a> <a href="/tags/Sevlet/" style="font-size: 10px;">Sevlet</a> <a href="/tags/Spring/" style="font-size: 12.5px;">Spring</a> <a href="/tags/Spring-Boot/" style="font-size: 12.5px;">Spring Boot</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cron/" style="font-size: 10px;">cron</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java知识/" style="font-size: 10px;">java知识</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/使用场景/" style="font-size: 10px;">使用场景</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/前端知识/" style="font-size: 10px;">前端知识</a> <a href="/tags/反射机制/" style="font-size: 10px;">反射机制</a> <a href="/tags/基本语法/" style="font-size: 10px;">基本语法</a> <a href="/tags/基础知识/" style="font-size: 17.5px;">基础知识</a> <a href="/tags/大数据/" style="font-size: 10px;">大数据</a> <a href="/tags/定时任务/" style="font-size: 10px;">定时任务</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/框架设计/" style="font-size: 10px;">框架设计</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/比较/" style="font-size: 10px;">比较</a> <a href="/tags/注解/" style="font-size: 10px;">注解</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/简介/" style="font-size: 10px;">简介</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网络传输/" style="font-size: 10px;">网络传输</a> <a href="/tags/菜鸟学习/" style="font-size: 15px;">菜鸟学习</a> <a href="/tags/难点/" style="font-size: 10px;">难点</a> <a href="/tags/集合相关知识/" style="font-size: 10px;">集合相关知识</a> <a href="/tags/面试题目/" style="font-size: 12.5px;">面试题目</a>
                     </div>
                 </section>
                 
@@ -261,35 +261,25 @@
 <h2 id="Mybatis模糊查询MySQL中记录的的常用三种方法"><a href="#Mybatis模糊查询MySQL中记录的的常用三种方法" class="headerlink" title="Mybatis模糊查询MySQL中记录的的常用三种方法"></a>Mybatis模糊查询MySQL中记录的的常用三种方法</h2><ul>
 <li>直接使用 % 拼接字符串，如 ‘%’#{name}’%’ 或 “%”#{name}”%”，单引号或双引号都可以。</li>
 <li>使用concat（str1,str2）函数拼接</li>
-<li>使用mybatis的bind标签<a id="more"></a>
-<the rest of contents | 余下全文><pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> 模糊查询的常用的<span class="token number">3</span>种方式<span class="token operator">:</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span> <span class="token operator">--</span><span class="token operator">></span>
-  <span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"getUsersByFuzzyQuery"</span> parameterType<span class="token operator">=</span><span class="token string">"User"</span> resultType<span class="token operator">=</span><span class="token string">"User"</span><span class="token operator">></span>
-      select <span class="token operator">&lt;</span>include refid<span class="token operator">=</span><span class="token string">"columns"</span><span class="token operator">/</span><span class="token operator">></span> from users
-      <span class="token operator">&lt;</span>where<span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>
-              方法一<span class="token operator">:</span> 直接使用 <span class="token operator">%</span> 拼接字符串
-              注意<span class="token operator">:</span>此处不能写成  <span class="token string">"%#{name}%"</span> <span class="token punctuation">,</span>#<span class="token punctuation">{</span>name<span class="token punctuation">}</span>就成了字符串的一部分<span class="token punctuation">,</span>
-              会发生这样一个异常<span class="token operator">:</span> The error occurred <span class="token keyword">while</span> setting parameters<span class="token punctuation">,</span>
-              应该写成<span class="token operator">:</span> <span class="token string">"%"</span>#<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token string">"%"</span><span class="token punctuation">,</span>即#<span class="token punctuation">{</span>name<span class="token punctuation">}</span>是一个整体<span class="token punctuation">,</span>前后加上<span class="token operator">%</span>
-          <span class="token operator">--</span><span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"name != null"</span><span class="token operator">></span>
-              name like <span class="token string">"%"</span>#<span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token string">"%"</span>
-          <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>方法二<span class="token operator">:</span> 使用<span class="token function">concat</span><span class="token punctuation">(</span>str1<span class="token punctuation">,</span>str2<span class="token punctuation">)</span>函数将两个参数连接 <span class="token operator">--</span><span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"phone != null"</span><span class="token operator">></span>
-              and phone like <span class="token function">concat</span><span class="token punctuation">(</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">"%"</span><span class="token punctuation">,</span>#<span class="token punctuation">{</span>phone<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"%"</span><span class="token punctuation">)</span>
-          <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>方法三<span class="token operator">:</span> 使用 bind 标签<span class="token punctuation">,</span>对字符串进行绑定<span class="token punctuation">,</span>然后对绑定后的字符串使用 like 关键字进行模糊查询 <span class="token operator">--</span><span class="token operator">></span>
-          <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"email != null"</span><span class="token operator">></span>
-              <span class="token operator">&lt;</span>bind name<span class="token operator">=</span><span class="token string">"pattern"</span> value<span class="token operator">=</span><span class="token string">"'%'+email+'%'"</span><span class="token operator">/</span><span class="token operator">></span>
-              and email like #<span class="token punctuation">{</span>pattern<span class="token punctuation">}</span>
-          <span class="token operator">&lt;</span><span class="token operator">/</span><span class="token keyword">if</span><span class="token operator">></span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>where<span class="token operator">></span>
-  <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</the></li>
+<li><p>使用mybatis的bind标签</p>
+<a id="more"></a>
+<p><the rest of contents | 余下全文><br><code>`</code> java</the></p>
+<!-- ******************** 模糊查询的常用的3种方式:********************* -->
+  <select id="getUsersByFuzzyQuery" parametertype="User" resulttype="User"><br>      select <include refid="columns"> from users<br>      <where><br>          // 方法一: 直接使用 % 拼接字符串<br>          // 注意:此处不能写成  “%#{name}%” ,#{name}就成了字符串的一部分,<br>          // 会发生这样一个异常: The error occurred while setting parameters,<br>          // 应该写成: “%”#{name}”%”,即#{name}是一个整体,前后加上%<br>          <if test="name != null"><br>              name like “%”#{name}”%”<br>          </if><br>          // 方法二: 使用concat(str1,str2)函数将两个参数连接<br>          <if test="phone != null"><br>              and phone like concat(concat(“%”,#{phone}),”%”)<br>          </if><br>          // 方法三: 使用 bind 标签,对字符串进行绑定,然后对绑定后的字符串使用 like 关键字进行模糊查询<br>          <if test="email != null"><br>              <bind name="pattern" value="'%'+email+'%'"><br>              and email like #{pattern}<br>          </bind></if><br>      </where><br>  </include></select>
+
+</li>
 </ul>
-<h2 id="Mybatis中参数为list的sql语句查询"><a href="#Mybatis中参数为list的sql语句查询" class="headerlink" title="Mybatis中参数为list的sql语句查询"></a>Mybatis中参数为list的sql语句查询</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//判断list是否为空</span>
+<pre><code>## Mybatis中大于小于的sql语句查询
+</code></pre><p>原符号       &lt;        &lt;=      &gt;       &gt;=       &amp;        ‘        “<br>替换符号    &lt;    &lt;=   &gt;    &gt;=   &amp;   &apos;  &quot;</p>
+<pre><code>```java
+  &lt;select id=&quot;downloadTestDrives&quot; parameterType=&quot;&quot; resultType=&quot;&quot;&gt;
+      SELECT * FROM user
+      WHERE 1=1
+      &lt;if test=&quot;endTimeStr != &#39;&#39; and startTimeStr != &#39;&#39;&quot; &gt;
+          AND created_time &amp;gt;= CONCAT(#{startTimeStr}) AND created_time &amp;lt;= CONCAT(#{endTimeStr})
+      &lt;/if&gt;
+  &lt;/select&gt;
+</code></pre><h2 id="Mybatis中参数为list的sql语句查询"><a href="#Mybatis中参数为list的sql语句查询" class="headerlink" title="Mybatis中参数为list的sql语句查询"></a>Mybatis中参数为list的sql语句查询</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//判断list是否为空</span>
 <span class="token operator">&lt;</span><span class="token keyword">if</span> test<span class="token operator">=</span><span class="token string">"list != null and list.size() > 0"</span> <span class="token operator">></span>
   WHERE fd<span class="token punctuation">.</span>flaw_id in
   <span class="token comment" spellcheck="true">//参数传入为 List&lt;int> list</span>
@@ -380,7 +370,7 @@
         <p><span>本文标题:</span><a href="/2019/11/14/mysql查询/">Mybatis中一些sql语句问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 tang 的个人博客">tang</a></p>
         <p><span>发布时间:</span>2019年11月14日 - 10时42分</p>
-        <p><span>最后更新:</span>2019年11月14日 - 11时08分</p>
+        <p><span>最后更新:</span>2020年01月08日 - 14时09分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/11/14/mysql查询/" title="Mybatis中一些sql语句问题">http://yoursite.com/2019/11/14/mysql查询/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/11/14/mysql查询/　　作者: tang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -395,6 +385,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2020/01/10/Java反射知识点/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Java反射
+        
+      </div>
+    </a>
   
   
     <a href="/2019/10/31/Ajax/" id="article-nav-older" class="article-nav-link-wrap">
@@ -475,7 +474,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2020/01/10/Java反射知识点/" title="上一篇: Java反射">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -484,7 +485,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/mysql查询/">Mybatis中一些sql语句问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/31/Ajax/">Ajax知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/31/线程/">实现线程的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/Http和Https/">Http和Https</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/01/10/Java反射知识点/">Java反射</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/mysql查询/">Mybatis中一些sql语句问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/31/Ajax/">Ajax知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/31/线程/">实现线程的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/21/Http和Https/">Http和Https</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Sevlet/">Sevlet知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/Hadoop知识/">Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/集合/">集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Vue/">Vue.js框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Spring注解大全/">Spring常用注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/springboot集成lombok/">spring boot集成Lombok</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/spring boot(一)/">Spring Boot(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Scheduled注解/">Spring定时任务 @Scheduled注解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Python应用场景/">Python应用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/python基础知识/">Python基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/php基础知识/">PHP基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/MQ/">消息队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/md语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java知识/">Java基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java正则表达式/">Java正则表达式(常用)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java常见题目/">Java常见题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/Java内存模型/">Java内存模型</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/git和svn/">Git和SVN的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/09/04/10个难回答的Java面试题/">10个难回答的Java面试题</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -514,7 +515,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2019 tang
+                &copy; 2020 tang
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  
